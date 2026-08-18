@@ -1,72 +1,120 @@
 /**
- * JEBIN JOSEPH - ULTRA 3D AI PORTFOLIO JAVASCRIPT ENGINE (2026 FULL EDITION)
+ * THE DAILY DEVELOPER / JEBIN CHRONICLE - JAVASCRIPT BROADSHEET ENGINE
  * Features:
- * - Full AI Voice Studio with Custom Voice Selector, Voice Personas (Manual On-Demand Play)
- * - Persona Switcher: Cyber Male (Deep), Cyber Female (Clear), Indian English, UK Studio
- * - Dynamic System Voices Detection with Country Flags & localStorage Persistence
- * - Live Synchronized Interactive Transcript with Auto-Scrolling
- * - Persistent Floating Cyber Audio Dock with Equalizer
- * - Ultra 3D Perspective Card Tilt Parallax & Holographic Glare
- * - Interactive Neural Particles Canvas (touch & mouse dynamic reactivity)
- * - Dynamic Multi-Role Typing with Cyber Cursor
- * - Web Audio API Synthetic Cyber SFX (with mute/unmute toggle)
- * - Responsive Mobile Drawer with Scroll-Lock & Backdrop Blur
- * - Scroll-Spy & Animated Progress Indicator
- * - Animated Stats Counter
- * - Experience vs Education Timeline Switcher
- * - Category Project Filter & Inspect Modal
- * - WhatsApp Instant Dispatcher & Toast Notifications
- * - Floating Interactive AI Chatbot Assistant Widget
+ * - Dynamic Newspaper Date & Live Time Formatter
+ * - Morning Edition (Newsprint) & Midnight Gazette (Dark Mode) Switcher with Persistence
+ * - Full AI Voice Broadcast Bureau with Voice Personas & Real-Time Synchronized Dispatches
+ * - Dynamic Multi-Role Broadsheet Headline Typing Effect
+ * - Interactive Project Filtering & Full-Page Gazette Inspection Supplement Modal
+ * - Instant WhatsApp Telegram Dispatcher with Automated Message Encoding
+ * - Virtual Newsroom Editor Chatbot Assistant
+ * - Smooth Scroll Progress & Mobile Navigation Drawer
+ * - Animated Press Statistical Counter
+ * - Career Chronicle vs Academic Archives Switcher
+ * - Toast Notification System
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNeuralCanvas();
+  initNewspaperDate();
+  initThemeToggle();
   initTypingEffect();
   initScrollAndNav();
-  initUltra3DTilt();
   initStatsCounter();
   initTimelineTabs();
   initProjectFiltersAndModal();
   initCopyButtons();
   initWhatsAppForm();
   initAiChatbot();
-  initCyberAudio();
   initAiVoiceNarratorStudio();
 });
 
 /* ==========================================================================
-   1. FULL AI VOICE RESUME STUDIO & CUSTOM VOICE ENGINE
+   1. DYNAMIC NEWSPAPER DATE FORMATTER
+   ========================================================================== */
+function initNewspaperDate() {
+  const dateEl = document.getElementById('current-newspaper-date');
+  if (!dateEl) return;
+
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const formatted = now.toLocaleDateString('en-US', options);
+  dateEl.textContent = `${formatted} Edition`;
+}
+
+/* ==========================================================================
+   2. MORNING PAPER (LIGHT) / MIDNIGHT GAZETTE (DARK) THEME SWITCHER
+   ========================================================================== */
+function initThemeToggle() {
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  const themeLabel = document.getElementById('theme-btn-label');
+  const htmlRoot = document.documentElement;
+
+  // Retrieve saved theme or default to morning paper (light newsprint)
+  const savedTheme = localStorage.getItem('newspaper_theme') || 'light';
+  applyTheme(savedTheme);
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      htmlRoot.setAttribute('data-theme', 'dark');
+      if (themeLabel) themeLabel.textContent = 'Morning Edition';
+      if (themeBtn) {
+        const icon = themeBtn.querySelector('i');
+        if (icon) icon.className = 'fas fa-sun';
+      }
+    } else {
+      htmlRoot.setAttribute('data-theme', 'light');
+      if (themeLabel) themeLabel.textContent = 'Midnight Edition';
+      if (themeBtn) {
+        const icon = themeBtn.querySelector('i');
+        if (icon) icon.className = 'fas fa-moon';
+      }
+    }
+    localStorage.setItem('newspaper_theme', theme);
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = htmlRoot.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(newTheme);
+      showToast(newTheme === 'dark' ? 'Switched to Midnight Gazette Edition 🌙' : 'Switched to Morning Newsprint Edition ☀️');
+    });
+  }
+}
+
+/* ==========================================================================
+   3. FULL AI VOICE BROADCAST BUREAU & SPEECH ENGINE
    ========================================================================== */
 const resumeVoiceSections = [
   {
     id: "bio",
-    title: "1. Bio & Overview",
+    title: "Dispatch 1: Bio & Mission Overview",
     subtitle: "Identity & Mission",
     text: "Welcome to the official portfolio of Jebin Joseph. Jebin is an innovative Full Stack Web Developer and Coding Instructor based in Kanyakumari, Tamil Nadu, India. He builds scalable, secure, and modern web applications with cutting-edge AI integrations and high-performance backends."
   },
   {
     id: "skills",
-    title: "2. Technical Stack",
+    title: "Dispatch 2: Technical Toolkit & Stack",
     subtitle: "Core Capabilities",
     text: "Jebin's core technical toolkit includes Python, Django, Flask, and RESTful API architecture on the backend. On the frontend, he specializes in HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap, and React, coupled with MySQL, PostgreSQL, and SQLite databases."
   },
   {
     id: "experience",
-    title: "3. Work & Teaching",
+    title: "Dispatch 3: Professional Journey & Instruction",
     subtitle: "Professional Journey",
     text: "Jebin is currently working as a Full Stack Coding Teacher at SR Indian Computers Karungal, mentoring students in Python and web development. Previously at Clovion Tech, he successfully built and deployed over five live production websites and integrated third-party REST APIs and payment gateways."
   },
   {
     id: "projects",
-    title: "4. Live Projects",
+    title: "Dispatch 4: Production Deployments",
     subtitle: "Featured Deployments",
     text: "His key deployments include an Online Course E-Learning Platform in Django with PayPal integration, the official Siva Prakasha Saba Trust portal, UbaaldGym fitness hub, and academic Student Attendance and Task Management software."
   },
   {
     id: "contact",
-    title: "5. Contact & Collaboration",
+    title: "Dispatch 5: Direct Wire & Inquiries",
     subtitle: "Get In Touch",
-    text: "To collaborate on projects or hire Jebin, reach out directly on WhatsApp at +91 9487851243 or by email at kmt4543@gmail.com. Thank you for exploring Jebin Joseph's AI portfolio."
+    text: "To collaborate on projects or hire Jebin, reach out directly on WhatsApp at +91 9487851243 or by email at kmt4543@gmail.com. Thank you for reading and listening to The Daily Developer."
   }
 ];
 
@@ -126,7 +174,7 @@ function initAiVoiceNarratorStudio() {
     }
 
     // Check saved preference or pick optimal default voice
-    const savedVoiceURI = localStorage.getItem('ai_preferred_voice_uri');
+    const savedVoiceURI = localStorage.getItem('broadsheet_voice_uri');
     if (savedVoiceURI) {
       const match = availableVoices.find(v => v.voiceURI === savedVoiceURI);
       if (match) selectedVoice = match;
@@ -156,9 +204,9 @@ function initAiVoiceNarratorStudio() {
       const idx = parseInt(e.target.value, 10);
       if (availableVoices[idx]) {
         selectedVoice = availableVoices[idx];
-        localStorage.setItem('ai_preferred_voice_uri', selectedVoice.voiceURI);
+        localStorage.setItem('broadsheet_voice_uri', selectedVoice.voiceURI);
         personaPillBtns.forEach(p => p.classList.remove('active'));
-        showToast(`Voice switched to: ${selectedVoice.name}`);
+        showToast(`Voice switched: ${selectedVoice.name}`);
         if (isPlaying && !isPaused) {
           speakSection(currentSectionIdx);
         }
@@ -179,34 +227,34 @@ function initAiVoiceNarratorStudio() {
         selectedVoice = availableVoices.find(v => (v.name.toLowerCase().includes('david') || v.name.toLowerCase().includes('guy') || v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('daniel')) && v.lang.startsWith('en'))
                      || availableVoices.find(v => v.lang.includes('en-US'))
                      || selectedVoice;
-        speechPitch = 0.92;
+        speechPitch = 0.95;
         speechRate = 1.0;
-        showToast('Activated: Cyber AI Male (Deep)');
+        showToast('Activated: Broadsheet Anchor (Deep Voice)');
       } else if (persona === 'cyber-female') {
         selectedVoice = availableVoices.find(v => (v.name.toLowerCase().includes('zira') || v.name.toLowerCase().includes('jenny') || v.name.toLowerCase().includes('aria') || v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('susan')) && v.lang.startsWith('en'))
                      || availableVoices.find(v => v.lang.startsWith('en'))
                      || selectedVoice;
-        speechPitch = 1.12;
-        speechRate = 1.05;
-        showToast('Activated: Cyber AI Female (Clear)');
+        speechPitch = 1.1;
+        speechRate = 1.02;
+        showToast('Activated: News Desk Host (Clear Voice)');
       } else if (persona === 'indian-en') {
         selectedVoice = availableVoices.find(v => v.lang.includes('en-IN') || v.name.toLowerCase().includes('india') || v.name.toLowerCase().includes('heera') || v.name.toLowerCase().includes('ravi'))
                      || availableVoices.find(v => v.lang.startsWith('en'))
                      || selectedVoice;
         speechPitch = 1.0;
         speechRate = 1.0;
-        showToast('Activated: Indian English Accent 🇮🇳');
+        showToast('Activated: Regional Bureau Accent 🇮🇳');
       } else if (persona === 'uk-studio') {
         selectedVoice = availableVoices.find(v => (v.lang.includes('en-GB') || v.name.toLowerCase().includes('george') || v.name.toLowerCase().includes('hazel') || v.name.toLowerCase().includes('uk')) && v.lang.startsWith('en'))
                      || availableVoices.find(v => v.lang.startsWith('en'))
                      || selectedVoice;
         speechPitch = 1.0;
         speechRate = 1.0;
-        showToast('Activated: UK Studio British 🇬🇧');
+        showToast('Activated: BBC UK Studio British 🇬🇧');
       }
 
       if (selectedVoice) {
-        localStorage.setItem('ai_preferred_voice_uri', selectedVoice.voiceURI);
+        localStorage.setItem('broadsheet_voice_uri', selectedVoice.voiceURI);
         if (voiceSelectDropdown) {
           const index = availableVoices.indexOf(selectedVoice);
           if (index !== -1) voiceSelectDropdown.value = index;
@@ -233,12 +281,11 @@ function initAiVoiceNarratorStudio() {
   function updateUI() {
     const section = resumeVoiceSections[currentSectionIdx];
 
-    // Update Status Labels
     if (studioStatusLabel) {
       const voiceName = selectedVoice ? ` (${selectedVoice.name.split(' ')[0]})` : '';
       studioStatusLabel.textContent = isPlaying 
-        ? (isPaused ? `⏸ Paused: ${section.title}` : `🔊 Speaking${voiceName}: ${section.title}`) 
-        : `Ready: Click 'Play Voice Resume' to start`;
+        ? (isPaused ? `⏸ Paused: ${section.title}` : `🔊 Broadcasting${voiceName}: ${section.title}`) 
+        : `Ready: Click 'Play Voice Resume' to begin transmission`;
     }
 
     if (studioTimeLabel) {
@@ -249,28 +296,26 @@ function initAiVoiceNarratorStudio() {
       studioSeekSlider.value = currentSectionIdx;
     }
 
-    // Studio Play Button
     if (studioPlayBtn) {
       const icon = studioPlayBtn.querySelector('i');
       const textSpan = studioPlayBtn.querySelector('span');
       if (isPlaying && !isPaused) {
         if (icon) icon.className = 'fas fa-pause';
-        if (textSpan) textSpan.textContent = 'Pause Narration';
+        if (textSpan) textSpan.textContent = 'Pause Transmission';
         updateVisualizers(true);
       } else {
         if (icon) icon.className = 'fas fa-play';
-        if (textSpan) textSpan.textContent = isPaused ? 'Resume Audio' : 'Play Voice Resume';
+        if (textSpan) textSpan.textContent = isPaused ? 'Resume Broadcast' : 'Play Voice Resume';
         updateVisualizers(false);
       }
     }
 
-    // Floating Dock Sync
     if (dockPlayBtn) {
       const icon = dockPlayBtn.querySelector('i');
       if (icon) icon.className = (isPlaying && !isPaused) ? 'fas fa-pause' : 'fas fa-play';
     }
     if (dockTitle) dockTitle.textContent = section.title;
-    if (dockSub) dockSub.textContent = isPlaying ? (isPaused ? 'Paused' : 'Now Playing') : 'Voice Tour Ready';
+    if (dockSub) dockSub.textContent = isPlaying ? (isPaused ? 'TRANSMISSION PAUSED' : 'NOW BROADCASTING') : 'BROADCAST READY';
 
     if (floatingDock) {
       if (isPlaying || isPaused) {
@@ -278,7 +323,6 @@ function initAiVoiceNarratorStudio() {
       }
     }
 
-    // Transcript active highlight
     transcriptItems.forEach((item, idx) => {
       if (idx === currentSectionIdx) {
         item.classList.add('active');
@@ -291,7 +335,7 @@ function initAiVoiceNarratorStudio() {
 
   function speakSection(index) {
     if (!synth) {
-      showToast('Voice Synthesis not supported in this browser.', 'fa-exclamation-triangle');
+      showToast('Voice Synthesis not supported in this browser.', 'fa-triangle-exclamation');
       return;
     }
 
@@ -302,7 +346,7 @@ function initAiVoiceNarratorStudio() {
       isPaused = false;
       currentSectionIdx = 0;
       updateUI();
-      showToast('Voice Resume Tour completed! 🎉');
+      showToast('Broadsheet Audio Tour completed! 📰');
       return;
     }
 
@@ -352,11 +396,9 @@ function initAiVoiceNarratorStudio() {
     }
   }
 
-  // Play / Pause Handlers
   if (studioPlayBtn) studioPlayBtn.addEventListener('click', togglePlayPause);
   if (dockPlayBtn) dockPlayBtn.addEventListener('click', togglePlayPause);
 
-  // Stop Button
   if (studioStopBtn) {
     studioStopBtn.addEventListener('click', () => {
       if (!synth) return;
@@ -366,11 +408,10 @@ function initAiVoiceNarratorStudio() {
       currentSectionIdx = 0;
       updateUI();
       if (floatingDock) floatingDock.classList.remove('visible');
-      showToast('Voice Tour Stopped');
+      showToast('Broadcast Stopped');
     });
   }
 
-  // Previous Section
   if (studioPrevBtn) {
     studioPrevBtn.addEventListener('click', () => {
       const prevIdx = Math.max(0, currentSectionIdx - 1);
@@ -378,7 +419,6 @@ function initAiVoiceNarratorStudio() {
     });
   }
 
-  // Next Section
   if (studioNextBtn) {
     studioNextBtn.addEventListener('click', () => {
       const nextIdx = Math.min(resumeVoiceSections.length - 1, currentSectionIdx + 1);
@@ -386,7 +426,6 @@ function initAiVoiceNarratorStudio() {
     });
   }
 
-  // Seek Slider
   if (studioSeekSlider) {
     studioSeekSlider.addEventListener('input', (e) => {
       const targetIdx = parseInt(e.target.value, 10);
@@ -394,7 +433,6 @@ function initAiVoiceNarratorStudio() {
     });
   }
 
-  // Speed Rate Switcher
   if (studioSpeedBtn) {
     studioSpeedBtn.addEventListener('click', () => {
       if (speechRate === 1.0) speechRate = 1.25;
@@ -409,14 +447,12 @@ function initAiVoiceNarratorStudio() {
     });
   }
 
-  // Transcript Card Clicks
   transcriptItems.forEach((item, idx) => {
     item.addEventListener('click', () => {
       speakSection(idx);
     });
   });
 
-  // Hero Quick Voice Trigger
   const heroVoiceBtn = document.getElementById('hero-voice-tour-btn');
   if (heroVoiceBtn) {
     heroVoiceBtn.addEventListener('click', (e) => {
@@ -427,169 +463,7 @@ function initAiVoiceNarratorStudio() {
     });
   }
 
-  // Initial UI state without auto-play
   updateUI();
-}
-
-/* ==========================================================================
-   2. ULTRA 3D PERSPECTIVE PARALLAX TILT
-   ========================================================================== */
-function initUltra3DTilt() {
-  const tiltElements = document.querySelectorAll('.glass-card, .project-card, .service-card, .terminal-window');
-
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    tiltElements.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const cardWidth = rect.width;
-        const cardHeight = rect.height;
-        const centerX = rect.left + cardWidth / 2;
-        const centerY = rect.top + cardHeight / 2;
-
-        const mouseX = e.clientX - centerX;
-        const mouseY = e.clientY - centerY;
-
-        const rotateX = ((-mouseY / (cardHeight / 2)) * 7).toFixed(2);
-        const rotateY = ((mouseX / (cardWidth / 2)) * 7).toFixed(2);
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-
-        const glareX = e.clientX - rect.left;
-        const glareY = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${glareX}px`);
-        card.style.setProperty('--mouse-y', `${glareY}px`);
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-      });
-    });
-  }
-}
-
-/* ==========================================================================
-   3. INTERACTIVE NEURAL NETWORK CANVAS PARTICLES
-   ========================================================================== */
-function initNeuralCanvas() {
-  const canvas = document.getElementById('neural-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let width, height;
-  let particles = [];
-  let particleCount = window.innerWidth < 768 ? 35 : 75;
-  const maxDistance = window.innerWidth < 768 ? 110 : 150;
-  let mouse = { x: null, y: null, radius: 160 };
-
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    particleCount = window.innerWidth < 768 ? 35 : 75;
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  window.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-
-  window.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
-      mouse.x = e.touches[0].clientX;
-      mouse.y = e.touches[0].clientY;
-    }
-  }, { passive: true });
-
-  window.addEventListener('touchend', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.7;
-      this.vy = (Math.random() - 0.5) * 0.7;
-      this.radius = Math.random() * 1.8 + 1;
-      this.color = Math.random() > 0.45 ? '#00f0ff' : '#8b5cf6';
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
-
-      if (mouse.x !== null && mouse.y !== null) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < mouse.radius) {
-          const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 2.2;
-          this.y -= (dy / dist) * force * 2.2;
-        }
-      }
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = 6;
-      ctx.shadowColor = this.color;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-    }
-  }
-
-  function initParticles() {
-    particles = [];
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-  }
-  initParticles();
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let a = 0; a < particles.length; a++) {
-      for (let b = a + 1; b < particles.length; b++) {
-        const dx = particles[a].x - particles[b].x;
-        const dy = particles[a].y - particles[b].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < maxDistance) {
-          const opacity = (1 - distance / maxDistance) * 0.22;
-          ctx.beginPath();
-          ctx.moveTo(particles[a].x, particles[a].y);
-          ctx.lineTo(particles[b].x, particles[b].y);
-          ctx.strokeStyle = `rgba(0, 240, 255, ${opacity})`;
-          ctx.lineWidth = 0.75;
-          ctx.stroke();
-        }
-      }
-    }
-
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
 }
 
 /* ==========================================================================
@@ -602,17 +476,17 @@ function initTypingEffect() {
   const titles = [
     "Full Stack Web Developer",
     "Django & Python Specialist",
-    "AI & Smart Systems Builder",
+    "Scalable API & Systems Architect",
     "Coding Educator & Mentor",
-    "REST API & Database Engineer"
+    "Database & UI Engineer"
   ];
 
   let titleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  const typeSpeed = 90;
-  const deleteSpeed = 45;
-  const pauseEnd = 1600;
+  const typeSpeed = 85;
+  const deleteSpeed = 40;
+  const pauseEnd = 1700;
   const pauseStart = 350;
 
   function type() {
@@ -647,7 +521,7 @@ function initTypingEffect() {
    5. SCROLL PROGRESS, MOBILE DRAWER, SCROLL-SPY, BACK TO TOP
    ========================================================================== */
 function initScrollAndNav() {
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector('.site-navigation-bar');
   const progressBar = document.querySelector('.scroll-progress-bar');
   const backToTopBtn = document.querySelector('.btn-back-to-top');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -689,7 +563,7 @@ function initScrollAndNav() {
     }
 
     if (header) {
-      if (scrollTop > 40) {
+      if (scrollTop > 80) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
@@ -706,7 +580,7 @@ function initScrollAndNav() {
 
     let currentId = '';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 130;
+      const sectionTop = section.offsetTop - 140;
       const sectionHeight = section.offsetHeight;
       if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
         currentId = section.getAttribute('id');
@@ -741,7 +615,7 @@ function initStatsCounter() {
         const target = entry.target;
         const targetCount = parseInt(target.getAttribute('data-target'), 10);
         let count = 0;
-        const duration = 1500;
+        const duration = 1400;
         const stepTime = Math.max(Math.floor(duration / targetCount), 20);
 
         const timer = setInterval(() => {
@@ -762,7 +636,7 @@ function initStatsCounter() {
 }
 
 /* ==========================================================================
-   7. TIMELINE TABS (EXPERIENCE VS EDUCATION)
+   7. TIMELINE TABS (CAREER CHRONICLE VS ACADEMIC ARCHIVES)
    ========================================================================== */
 function initTimelineTabs() {
   const tabBtns = document.querySelectorAll('.timeline-tab-btn');
@@ -797,7 +671,7 @@ const projectData = [
     title: "Online Course E-Commerce Platform",
     category: "django",
     image: "images/aa10.jpg",
-    desc: "A full-featured e-learning marketplace developed in Django and Python. Allows instructors to publish video courses and students to browse, enroll, track lesson progress, and securely checkout via payment gateway.",
+    desc: "A full-featured e-learning marketplace developed in Django and Python. Allows instructors to publish video courses and students to browse, enroll, track lesson progress, and securely checkout via PayPal payment gateway.",
     tech: ["Django", "Python", "PostgreSQL", "PayPal", "Bootstrap 5", "HTML5/CSS3"],
     live: "http://clovion.org/elearningweb/",
     github: "https://github.com/Jebindevp"
@@ -959,11 +833,11 @@ function initProjectFiltersAndModal() {
 /* ==========================================================================
    9. COPY TO CLIPBOARD WITH TOAST NOTIFICATION
    ========================================================================== */
-function showToast(message, icon = 'fa-check-circle') {
+function showToast(message, icon = 'fa-circle-check') {
   const container = document.querySelector('.toast-container') || createToastContainer();
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<i class="fas ${icon}" style="color: var(--cyan-primary);"></i> <span>${message}</span>`;
+  toast.innerHTML = `<i class="fas ${icon}" style="color: var(--press-crimson);"></i> <span>${message}</span>`;
   container.appendChild(toast);
 
   setTimeout(() => {
@@ -992,7 +866,7 @@ function initCopyButtons() {
 }
 
 /* ==========================================================================
-   10. WHATSAPP INSTANT MESSAGE GENERATOR FORM
+   10. WHATSAPP TELEGRAM DISPATCHER FORM
    ========================================================================== */
 function initWhatsAppForm() {
   const form = document.getElementById('whatsappForm');
@@ -1008,29 +882,31 @@ function initWhatsAppForm() {
     const message = document.getElementById('message').value.trim();
 
     if (!fname || !email || !message) {
-      showToast('Please fill out required fields', 'fa-exclamation-triangle');
+      showToast('Please fill out required fields', 'fa-triangle-exclamation');
       return;
     }
 
     const whatsappText = 
-      `*New Portfolio Inquiry - Jebin Joseph*%0A%0A` +
-      `👤 *Name:* ${encodeURIComponent(fname)} ${encodeURIComponent(lname)}%0A` +
+      `*TELEGRAM DISPATCH - THE DAILY DEVELOPER*%0A` +
+      `---------------------------------------%0A` +
+      `👤 *Sender:* ${encodeURIComponent(fname)} ${encodeURIComponent(lname)}%0A` +
       `📧 *Email:* ${encodeURIComponent(email)}%0A` +
-      `📌 *Subject:* ${encodeURIComponent(subject)}%0A` +
-      `💬 *Message:* ${encodeURIComponent(message)}`;
+      `📌 *Topic:* ${encodeURIComponent(subject || 'General Project Inquiry')}%0A` +
+      `💬 *Message:* ${encodeURIComponent(message)}%0A` +
+      `---------------------------------------`;
 
     const phone = "919487851243";
     const whatsappUrl = `https://wa.me/${phone}?text=${whatsappText}`;
 
     window.open(whatsappUrl, '_blank');
 
-    showToast('Redirecting to WhatsApp...', 'fa-paper-plane');
+    showToast('Redirecting Telegram to WhatsApp...', 'fa-paper-plane');
     form.reset();
   });
 }
 
 /* ==========================================================================
-   11. INTERACTIVE AI ASSISTANT CHATBOT WIDGET
+   11. VIRTUAL NEWSROOM EDITOR CHATBOT WIDGET
    ========================================================================== */
 function initAiChatbot() {
   const trigger = document.querySelector('.ai-widget-trigger');
@@ -1052,11 +928,11 @@ function initAiChatbot() {
   }
 
   const aiKnowledge = {
-    "skills": "Jebin specializes in **Full Stack Python & Django**, REST APIs, HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, React, MySQL/PostgreSQL databases, and AI web automation tools.",
-    "projects": "Jebin has built live systems like the **Online Course E-Learning Platform** (Django), **Siva Prakasha Saba Trust Website**, **UbaaldGym Portal**, and **SR Indian Computers Portal**.",
-    "contact": "You can reach Jebin instantly via WhatsApp (+91 9487851243), Email (kmt4543@gmail.com), or GitHub (@Jebindevp).",
-    "resume": "You can download Jebin's full verified resume PDF right from the top navigation bar or using the 'Download CV' button in the Hero section.",
-    "experience": "Jebin is currently a **Full Stack Coding Teacher** at SR Indian Computers and previously worked as a **Web Developer & API Engineer** at Clovion Tech."
+    "skills": "Jebin's verified stack spans **Full Stack Python & Django**, REST APIs, HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap 5, React basics, MySQL, PostgreSQL, and modern AI automation tools.",
+    "projects": "Key featured deployments in The Daily Developer include the **Online Course E-Learning Platform** (Django), **Siva Prakasha Saba Trust Portal**, **UbaaldGym Fitness Hub**, and **SR Indian Computers Portal**.",
+    "contact": "You can connect directly with Jebin via WhatsApp (+91 9487851243), Email (kmt4543@gmail.com), or GitHub (@Jebindevp).",
+    "resume": "You can download Jebin's full verified resume dossier PDF from the top navigation ribbon or the Front Page lead story.",
+    "experience": "Jebin is currently a **Full Stack Coding Teacher** at SR Indian Computers Karungal and previously delivered 5+ production web platforms at Clovion Tech."
   };
 
   function appendMessage(text, sender = 'bot') {
@@ -1075,70 +951,9 @@ function initAiChatbot() {
       appendMessage(questionText, 'user');
 
       setTimeout(() => {
-        const reply = aiKnowledge[topic] || "I am Jebin's AI Assistant! Feel free to explore his projects or get in touch directly.";
+        const reply = aiKnowledge[topic] || "I am the Virtual Newsroom Editor! Feel free to explore Jebin's projects or dispatch a direct inquiry.";
         appendMessage(reply, 'bot');
-      }, 350);
+      }, 300);
     });
-  });
-}
-
-/* ==========================================================================
-   12. SYNTHETIC CYBER AUDIO (Web Audio API)
-   ========================================================================== */
-function initCyberAudio() {
-  let audioCtx = null;
-  let isMuted = true;
-
-  const audioToggleBtn = document.getElementById('audio-toggle-btn');
-  if (!audioToggleBtn) return;
-
-  function playTone(freq = 440, duration = 0.08, type = 'sine') {
-    if (isMuted) return;
-    try {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {
-      // Ignore audio context failures
-    }
-  }
-
-  audioToggleBtn.addEventListener('click', () => {
-    isMuted = !isMuted;
-    const icon = audioToggleBtn.querySelector('i');
-    if (icon) {
-      if (isMuted) {
-        icon.className = 'fas fa-volume-mute';
-        audioToggleBtn.title = 'Enable Cyber Audio SFX';
-        showToast('Cyber SFX Muted');
-      } else {
-        icon.className = 'fas fa-volume-up';
-        audioToggleBtn.title = 'Mute Cyber Audio SFX';
-        showToast('Cyber SFX Activated! 🔊');
-        playTone(587.33, 0.12, 'triangle');
-      }
-    }
-  });
-
-  document.querySelectorAll('.btn-cyber, .filter-btn, .timeline-tab-btn, .btn-voice-ctrl, .persona-pill-btn').forEach(el => {
-    el.addEventListener('mouseenter', () => playTone(659.25, 0.04, 'sine'));
-    el.addEventListener('click', () => playTone(880, 0.08, 'triangle'));
   });
 }

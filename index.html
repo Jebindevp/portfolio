@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   
-  <title>Jebin Joseph | Full Stack AI & Web Developer | Django Specialist</title>
-  <meta name="description" content="Official Portfolio of Jebin Joseph - Full Stack Web Developer, Django Specialist, and Coding Instructor based in Kanyakumari, Tamil Nadu. Features interactive AI Voice Resume Tour & Live Deployments.">
-  <meta name="keywords" content="Jebin Joseph, Full Stack Developer, Python Django Developer, Web Designer, AI Web Developer, Coding Teacher, Portfolio, Voice Resume, Tamil Nadu Developer">
+  <title>The Daily Developer | Jebin Joseph - Full Stack Engineer & Python Specialist</title>
+  <meta name="description" content="The Daily Developer - Official broadsheet publication of Jebin Joseph. Full Stack Python & Django Specialist, Web Engineer, and Coding Educator based in Kanyakumari, Tamil Nadu.">
+  <meta name="keywords" content="Jebin Joseph, The Daily Developer, Full Stack Developer, Python Django Developer, Web Designer, AI Web Developer, Coding Teacher, Portfolio, Broadsheet, Newspaper Design">
   <meta name="author" content="Jebin Joseph">
-  <meta name="theme-color" content="#040711">
+  <meta name="theme-color" content="#f6f1e5">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Jebin Joseph | Full Stack AI & Web Developer">
-  <meta property="og:description" content="Explore cutting-edge Django web applications, REST APIs, AI-integrated solutions, and interactive voice resume tour by Jebin Joseph.">
+  <meta property="og:title" content="The Daily Developer | Jebin Joseph Broadsheet Portfolio">
+  <meta property="og:description" content="Explore cutting-edge Django web applications, REST APIs, AI-integrated solutions, and interactive voice broadcast tour by Jebin Joseph.">
   <meta property="og:image" content="images/mypic.jpg">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -28,19 +23,11 @@
   <!-- Devicon Vector Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-  <!-- AI Theme Stylesheet -->
+  <!-- Broadsheet Newspaper Stylesheet -->
   <link rel="stylesheet" href="css/ai-style.css">
 </head>
 
 <body>
-  <!-- Neural Network Particle Canvas -->
-  <canvas id="neural-canvas"></canvas>
-  
-  <!-- Ambient Grid & Glow Effects -->
-  <div class="ambient-grid"></div>
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
-
   <!-- Scroll Progress Indicator -->
   <div class="scroll-progress-container">
     <div class="scroll-progress-bar"></div>
@@ -51,196 +38,299 @@
 
   <div class="app-wrapper">
     <!-- ==========================================
-         NAVIGATION BAR
+         TOP EAR-PIECES & EDITION BAR
          ========================================== -->
-    <header class="site-header">
-      <div class="container nav-container">
-        <a href="#hero" class="brand-logo" title="Jebin Joseph Home">
-          <span class="brand-badge">&lt;/&gt;</span>
-          <span>JEBIN<span style="color: var(--cyan-primary);">.DEV</span></span>
-        </a>
+    <div class="newspaper-top-bar">
+      <div class="container top-bar-inner">
+        <div class="top-bar-left">
+          <span class="top-bar-item">
+            <i class="fas fa-sun"></i>
+            <span>Kanyakumari, IN: 28°C • High Code Velocity</span>
+          </span>
+          <span class="top-bar-item">
+            <i class="fas fa-calendar-day"></i>
+            <span id="current-newspaper-date">Tuesday Edition</span>
+          </span>
+        </div>
 
-        <ul class="nav-menu">
-          <button class="mobile-drawer-close" aria-label="Close navigation menu">
-            <i class="fas fa-times"></i>
-          </button>
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+        <div class="top-bar-center">
+          <span class="edition-badge">★ LATE CITY BROADSHEET ★</span>
+        </div>
 
-        <div class="nav-actions">
-          <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-cyber btn-glass" title="Download Resume">
-            <i class="fas fa-file-pdf"></i>
-            <span>Resume</span>
-          </a>
-          <a href="#contact" class="btn-cyber btn-primary-glow">
-            <i class="fas fa-paper-plane"></i>
-            <span>Let's Talk</span>
-          </a>
-          <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
-            <i class="fas fa-bars"></i>
+        <div class="top-bar-right">
+          <span class="top-bar-item">
+            <i class="fas fa-barcode"></i>
+            <span>ISSN 2026-JEBIN</span>
+          </span>
+          <button id="theme-toggle-btn" class="theme-switch-btn" title="Toggle Morning Newsprint / Midnight Gazette Edition">
+            <i class="fas fa-moon"></i>
+            <span id="theme-btn-label">Midnight Edition</span>
           </button>
         </div>
       </div>
+    </div>
+
+    <!-- ==========================================
+         LIVE MOVING BREAKING NEWS WIRE TICKER
+         ========================================== -->
+    <div class="newspaper-ticker-wrapper">
+      <div class="ticker-label">
+        <i class="fas fa-bolt"></i>
+        <span>Breaking Wire</span>
+      </div>
+      <div class="ticker-content">
+        <span class="ticker-item"><span class="ticker-dot">●</span> <strong>SPECIAL BULLETIN:</strong> Full Stack Python & Django Specialist Jebin Joseph open for global client & engineering roles</span>
+        <span class="ticker-item"><span class="ticker-dot">●</span> <strong>TECH STOCKS:</strong> Python <span class="ticker-badge-up">▲ +6.4%</span> | Django <span class="ticker-badge-up">▲ +5.2%</span> | REST APIs <span class="ticker-badge-up">▲ +4.8%</span> | PostgreSQL <span class="ticker-badge-up">▲ +3.9%</span></span>
+        <span class="ticker-item"><span class="ticker-dot">●</span> <strong>DISPATCH FROM PRODUCTION:</strong> 5+ Live client production platforms successfully launched</span>
+        <span class="ticker-item"><span class="ticker-dot">●</span> <strong>AUDIO WIRE:</strong> Synchronized AI Voice Broadcast Studio active on Page 2</span>
+        <span class="ticker-item"><span class="ticker-dot">●</span> <strong>TELEGRAPH DESK:</strong> Direct WhatsApp messaging open for instant project inquiries</span>
+        <!-- Continuous Marquee Loop -->
+        <span class="ticker-item"><span class="ticker-dot">●</span> <strong>SPECIAL BULLETIN:</strong> Full Stack Python & Django Specialist Jebin Joseph open for global client & engineering roles</span>
+        <span class="ticker-item"><span class="ticker-dot">●</span> <strong>TECH STOCKS:</strong> Python <span class="ticker-badge-up">▲ +6.4%</span> | Django <span class="ticker-badge-up">▲ +5.2%</span> | REST APIs <span class="ticker-badge-up">▲ +4.8%</span> | PostgreSQL <span class="ticker-badge-up">▲ +3.9%</span></span>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         GRAND BROADSHEET MASTHEAD & FLAG
+         ========================================== -->
+    <header class="site-masthead">
+      <div class="container">
+        <div class="masthead-flag">
+          <div class="masthead-tagline">The Premier Technical Broadsheet • Founded in Kanyakumari</div>
+          <h1 class="masthead-title">
+            <a href="#hero">The Daily Developer</a>
+          </h1>
+          <p class="masthead-subtitle">The Official Gazette of Jebin Joseph • Full Stack Architect, Django Specialist & Coding Educator</p>
+        </div>
+
+        <div class="masthead-info-bar">
+          <div class="masthead-info-left">
+            <span>VOL. IV • NO. 42 • SPECIAL EDITION</span>
+          </div>
+          <div class="masthead-info-center">
+            <span>★ "VERITAS IN CODICE • SCALABILITAS IN STRUCTURA" ★</span>
+          </div>
+          <div class="masthead-info-right">
+            <span>PRICE: OPEN-SOURCE (FREE WORLDWIDE CIRCULATION)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Ribbon Bar -->
+      <nav class="site-navigation-bar">
+        <div class="container nav-container">
+          <ul class="nav-menu">
+            <button class="mobile-drawer-close" aria-label="Close navigation menu">
+              <i class="fas fa-times"></i>
+            </button>
+            <li><a href="#hero" class="nav-link active">Front Page</a></li>
+            <li><a href="#voice-studio" class="nav-link">Audio Wire</a></li>
+            <li><a href="#about" class="nav-link">Editorial (Bio)</a></li>
+            <li><a href="#skills" class="nav-link">Classifieds (Skills)</a></li>
+            <li><a href="#experience" class="nav-link">Dispatches (Career)</a></li>
+            <li><a href="#projects" class="nav-link">Special Reports (Projects)</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Telegraph (Contact)</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-press btn-press-ink" title="Download Official Resume PDF">
+              <i class="fas fa-file-pdf"></i>
+              <span>Printed Dossier</span>
+            </a>
+            <a href="#contact" class="btn-press btn-press-primary">
+              <i class="fas fa-paper-plane"></i>
+              <span>Wire Desk</span>
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- ==========================================
-         HERO SECTION
+         FRONT PAGE HERO & MULTI-STORY BROADSHEET LAYOUT
          ========================================== -->
     <section id="hero" class="hero-section">
       <div class="container">
-        <div class="hero-grid">
-          <!-- Hero Text Content -->
-          <div class="hero-content">
-            <div class="hero-status-pill">
-              <span class="pulse-dot"></span>
-              <span>Available for Full-Stack & AI Roles</span>
+        <div class="front-page-top-banner">
+          <span>★ SECTION A • PAGE 1 • LEAD DISPATCHES ★</span>
+          <span>BUREAU: KANYAKUMARI, TAMIL NADU, INDIA</span>
+        </div>
+
+        <div class="front-page-grid">
+          <!-- Main Lead Story Column (A1) -->
+          <article class="lead-story">
+            <div class="lead-category-kicker">Exclusive Lead Report</div>
+            <h2 class="lead-headline">
+              Engineer Delivers High-Performance <span class="highlight">Django Web Platforms & AI Automation</span>
+            </h2>
+
+            <div class="lead-byline-box">
+              <span class="byline-author">By <strong>JEBIN JOSEPH</strong>, Chief Technical Correspondent</span>
+              <span class="byline-dateline">KANYAKUMARI BUREAU • FOR IMMEDIATE RELEASE</span>
             </div>
 
-            <p class="hero-greeting">// HELLO WORLD, WELCOME TO MY UNIVERSE</p>
-            <h1 class="hero-name">JEBIN <span class="highlight">JOSEPH</span></h1>
-
-            <div class="hero-typing-box">
-              <span>I'm a </span>
+            <div class="lead-typing-subhead">
+              <span>SPECIALISATION: </span>
               <span class="typing-target">Full Stack Web Developer</span>
             </div>
 
-            <p class="hero-description">
-              Innovative Full Stack Developer and Coding Educator with hands-on experience building scalable, secure, and dynamic web applications with Django, Python, REST APIs, and modern AI-driven solutions.
-            </p>
+            <!-- Two Column Story Flow with Drop Cap -->
+            <div class="article-columns-flow">
+              <p class="article-lead-p">
+                <span class="drop-cap">I</span>n a fast-evolving digital landscape requiring resilient architecture and rapid execution, Full Stack Developer Jebin Joseph continues to set high engineering standards. With deep technical command over Python, Django, Flask, relational databases, and modern responsive frontends, he builds software that marries backend power with intuitive editorial elegance.
+              </p>
+              <p class="article-lead-p">
+                Having engineered multiple live e-learning systems with payment gateways, enterprise administrative portals, and having instructed over 100 budding software engineers, his track record demonstrates relentless commitment to delivery, code cleanliness, and architectural scale.
+              </p>
+            </div>
 
-            <div class="hero-cta-group">
-              <a href="#voice-studio" id="hero-voice-tour-btn" class="btn-cyber btn-primary-glow" title="Listen to Full AI Voice Resume Tour">
-                <i class="fas fa-volume-up"></i>
-                <span>Listen AI Voice Tour</span>
+            <!-- Secondary Front-Page Article Box (A2) -->
+            <div class="secondary-front-article">
+              <h4><i class="fas fa-graduation-cap" style="color: var(--press-crimson); margin-right: 6px;"></i> The Education Dispatch: Cultivating the Next Generation of Coders</h4>
+              <p>
+                From his teaching desk at SR Indian Computers Karungal, Jebin instructs computer science students in Python algorithms, data structures, and production-ready full-stack pipelines—bridging the vital gap between academic theory and industry reality.
+              </p>
+            </div>
+
+            <div class="lead-actions-row">
+              <a href="#voice-studio" id="hero-voice-tour-btn" class="btn-press btn-press-primary" title="Listen to AI Voice Resume Studio Tour">
+                <i class="fas fa-broadcast-tower"></i>
+                <span>Listen Audio Wire Tour</span>
               </a>
-              <a href="#projects" class="btn-cyber btn-violet-glass">
-                <i class="fas fa-rocket"></i>
-                <span>Explore Projects</span>
+              <a href="#projects" class="btn-press btn-press-ink">
+                <i class="fas fa-newspaper"></i>
+                <span>Examine Gazetted Works</span>
               </a>
-              <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-cyber btn-glass">
+              <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-press btn-press-outline">
                 <i class="fas fa-download"></i>
-                <span>Download CV</span>
+                <span>Download Press CV</span>
               </a>
             </div>
 
-            <!-- Social Links -->
+            <!-- Vintage Press Social Seals -->
             <div class="hero-social-row">
-              <a href="https://www.linkedin.com/in/jebin-joseph-6ba428376/" target="_blank" rel="noopener" class="social-circle-btn" title="LinkedIn Profile">
+              <a href="https://www.linkedin.com/in/jebin-joseph-6ba428376/" target="_blank" rel="noopener" class="social-press-btn" title="LinkedIn Profile">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="social-circle-btn" title="GitHub Profile">
+              <a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="social-press-btn" title="GitHub Profile">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://wa.me/919487851243?text=Hello%20Jebin,%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener" class="social-circle-btn" title="WhatsApp Chat">
+              <a href="https://wa.me/919487851243?text=Hello%20Jebin,%20I%20saw%20your%20broadsheet%20portfolio!" target="_blank" rel="noopener" class="social-press-btn" title="WhatsApp Chat">
                 <i class="fab fa-whatsapp"></i>
               </a>
-              <a href="mailto:kmt4543@gmail.com" class="social-circle-btn" title="Send Email">
+              <a href="mailto:kmt4543@gmail.com" class="social-press-btn" title="Send Direct Email">
                 <i class="fas fa-envelope"></i>
               </a>
-              <a href="images/Jebin Poster.png" target="_blank" class="social-circle-btn" title="View Profile Poster">
+              <a href="images/Jebin Poster.png" target="_blank" class="social-press-btn" title="View Profile Poster">
                 <i class="fas fa-image"></i>
               </a>
             </div>
-          </div>
+          </article>
 
-          <!-- Hero Avatar Showcase with 3D Hologram Glow -->
-          <div class="hero-avatar-wrapper">
-            <div class="avatar-neon-ring">
-              <div class="avatar-inner-box">
-                <img src="images/mypic.jpg" alt="Jebin Joseph - Full Stack Developer">
+          <!-- Front Page Sidebar (Portrait, Almanac, & Vital Stats Bulletin) -->
+          <aside class="front-page-sidebar">
+            <!-- Halftone Broadsheet Portrait Frame -->
+            <div class="newspaper-photo-box">
+              <div class="photo-inner-wrapper">
+                <img src="images/mypic.jpg" alt="Jebin Joseph - Full Stack Engineer Portrait">
+              </div>
+              <div class="photo-caption">
+                <strong>PORTRAIT IN FOCUS:</strong> Jebin Joseph, Full Stack Developer and Coding Educator at the workstation in Tamil Nadu.
+                <span class="photo-credit">STAFF PHOTO • THE DAILY DEVELOPER</span>
               </div>
             </div>
 
-            <!-- Floating 3D HUD Badges -->
-            <div class="hero-floating-card floating-card-1">
-              <i class="fas fa-code-branch"></i>
-              <div class="card-text">
-                <h4>5+ Live Web Apps</h4>
-                <p>Deployed for Clients</p>
+            <!-- Almanac & Tech Weather Box -->
+            <div class="almanac-card">
+              <div class="almanac-title">
+                <span><i class="fas fa-cloud-sun" style="color: var(--press-gold); margin-right: 6px;"></i> Technical Almanac</span>
+                <span>STATUS: NOMINAL</span>
+              </div>
+              <div class="almanac-content">
+                <p><strong>Visibility:</strong> 100% High Readability Code</p>
+                <p><strong>Barometer:</strong> 5+ Live Client Deployments</p>
+                <p><strong>Outlook:</strong> Ready for Full-Stack & AI Roles</p>
               </div>
             </div>
 
-            <div class="hero-floating-card floating-card-2">
-              <i class="fab fa-python" style="color: #f59e0b;"></i>
-              <div class="card-text">
-                <h4>Django & Python</h4>
-                <p>Full-Stack Core</p>
+            <!-- Key Indices & Stats Bulletin -->
+            <div class="stats-bulletin-card">
+              <div class="bulletin-header">
+                <span><i class="fas fa-chart-line" style="color: var(--press-crimson); margin-right: 6px;"></i> Vital Press Indices</span>
+                <span style="font-size: 0.72rem; color: var(--ink-muted);">VERIFIED STATS</span>
+              </div>
+
+              <div class="bulletin-grid">
+                <div class="bulletin-item">
+                  <div class="bulletin-number">
+                    <span class="stat-count" data-target="5">0</span>+
+                  </div>
+                  <div class="bulletin-label">Live Client Deployments</div>
+                </div>
+
+                <div class="bulletin-item">
+                  <div class="bulletin-number">
+                    <span class="stat-count" data-target="15">0</span>+
+                  </div>
+                  <div class="bulletin-label">Tech Stacks & Tools</div>
+                </div>
+
+                <div class="bulletin-item">
+                  <div class="bulletin-number">
+                    <span class="stat-count" data-target="100">0</span>+
+                  </div>
+                  <div class="bulletin-label">Students Mentored</div>
+                </div>
+
+                <div class="bulletin-item">
+                  <div class="bulletin-number">
+                    <span class="stat-count" data-target="100">0</span>%
+                  </div>
+                  <div class="bulletin-label">Commitment & Delivery</div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Metrics Ribbon -->
-        <div class="stats-ribbon">
-          <div class="glass-card stat-card">
-            <div class="stat-number-box">
-              <span class="stat-count gradient-num" data-target="5">0</span>
-              <span class="gradient-num">+</span>
-            </div>
-            <div class="stat-label">Live Client Deployments</div>
-          </div>
-
-          <div class="glass-card stat-card">
-            <div class="stat-number-box">
-              <span class="stat-count gradient-num" data-target="15">0</span>
-              <span class="gradient-num">+</span>
-            </div>
-            <div class="stat-label">Tech Stacks & Tools</div>
-          </div>
-
-          <div class="glass-card stat-card">
-            <div class="stat-number-box">
-              <span class="stat-count gradient-num" data-target="100">0</span>
-              <span class="gradient-num">+</span>
-            </div>
-            <div class="stat-label">Students Mentored</div>
-          </div>
-
-          <div class="glass-card stat-card">
-            <div class="stat-number-box">
-              <span class="stat-count gradient-num" data-target="100">0</span>
-              <span class="gradient-num">%</span>
-            </div>
-            <div class="stat-label">Commitment & Delivery</div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         FULL DEDICATED AI VOICE STUDIO SECTION
+         AUDIO WIRE & RADIO BROADCAST BUREAU (AI VOICE STUDIO)
          ========================================== -->
     <section id="voice-studio" class="section">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">
-            <i class="fas fa-podcast"></i>
-            <span>Interactive Audio Experience</span>
+            <i class="fas fa-radio"></i>
+            <span>Press Radio & Audio Bureau</span>
           </div>
-          <h2 class="section-title">AI Voice <span class="highlight">Resume Studio</span></h2>
-          <p class="section-subtitle">Choose your preferred AI narrator voice, accent, or speed, and listen to a real-time synchronized tour of Jebin's background and projects.</p>
+          <h2 class="section-title">The Audio Wire <span class="highlight">Voice Resume Studio</span></h2>
+          <p class="section-subtitle">Select your preferred broadcast narrator persona or system voice, and listen to a real-time synchronized narration of Jebin's professional record.</p>
+          <div class="section-header-rule"></div>
         </div>
 
         <div class="voice-studio-grid">
-          <!-- Left: 3D Hologram Audio Controller -->
-          <div class="glass-card voice-deck-card">
-            <!-- 3D Orb Visualizer -->
-            <div class="voice-orb-wrapper">
-              <div class="voice-orb-ring-1"></div>
-              <div class="voice-orb-ring-2"></div>
-              <div class="voice-orb-core">
-                <i class="fas fa-microphone-alt"></i>
+          <!-- Left: Vintage Broadcast Controller Deck -->
+          <div class="broadcast-deck-card">
+            <div class="broadcast-deck-header">
+              <div>
+                <h3 style="font-family: var(--font-subhead); font-size: 1.1rem; font-weight: 800; text-transform: uppercase;">
+                  <i class="fas fa-microphone-lines" style="color: var(--press-crimson); margin-right: 6px;"></i> Broadcast Studio Console
+                </h3>
+                <span style="font-size: 0.76rem; color: var(--ink-muted); font-family: var(--font-sans);">Direct Transmission Wire</span>
               </div>
+              <span class="broadcast-badge">
+                <span class="pulse-red-dot"></span> ON AIR
+              </span>
             </div>
 
-            <!-- Equalizer Soundwave -->
-            <div id="studio-soundwave" class="soundwave-visualizer" title="AI Voice Frequency Wave">
+            <!-- Soundwave Frequency Visualizer -->
+            <div id="studio-soundwave" class="soundwave-visualizer" title="Speech Frequency Visualizer">
               <div class="wave-bar"></div>
               <div class="wave-bar"></div>
               <div class="wave-bar"></div>
@@ -253,51 +343,49 @@
             </div>
 
             <!-- Status Label -->
-            <p id="studio-status-label" style="color: var(--cyan-primary); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600;">
-              Ready: Click 'Play Voice Resume' to start
+            <p id="studio-status-label" style="color: var(--press-crimson); font-family: var(--font-typewriter); font-size: 0.85rem; font-weight: 700; text-align: center;">
+              Ready: Click 'Play Voice Resume' to begin transmission
             </p>
 
-            <!-- Voice Customizer & Persona Selector -->
-            <div class="voice-selector-box">
-              <div class="voice-selector-label">
-                <i class="fas fa-user-cog"></i> Choose AI Voice Persona:
+            <!-- Voice Persona Presets -->
+            <div>
+              <div style="font-family: var(--font-sans); font-size: 0.74rem; font-weight: 800; text-transform: uppercase; color: var(--ink-secondary); margin-bottom: 6px;">
+                <i class="fas fa-user-gear"></i> Select Broadcast Narrator Persona:
               </div>
-              
-              <!-- Persona Quick Pills -->
               <div class="voice-persona-pills">
                 <button class="persona-pill-btn active" data-persona="cyber-male">
-                  <span>🤖 Cyber Male (Deep)</span>
+                  <span>🎙️ Broadsheet Anchor (Deep)</span>
                 </button>
                 <button class="persona-pill-btn" data-persona="cyber-female">
-                  <span>✨ Cyber Female (Clear)</span>
+                  <span>✨ News Desk Host (Clear)</span>
                 </button>
                 <button class="persona-pill-btn" data-persona="indian-en">
-                  <span>🇮🇳 Indian Accent</span>
+                  <span>🇮🇳 Regional Bureau (India)</span>
                 </button>
                 <button class="persona-pill-btn" data-persona="uk-studio">
-                  <span>🇬🇧 UK Studio</span>
+                  <span>🇬🇧 BBC Style (UK Studio)</span>
                 </button>
               </div>
 
-              <!-- Full Dynamic System Voices Select -->
-              <div style="margin-top: 4px;">
-                <label for="studio-voice-select" style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); display: block; margin-bottom: 4px;">
-                  All Available System & Browser Voices:
+              <!-- Full Browser Voice Selector Dropdown -->
+              <div style="margin-top: 10px;">
+                <label for="studio-voice-select" style="font-size: 0.72rem; color: var(--ink-muted); font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 4px;">
+                  All Available Browser & System Voices:
                 </label>
                 <select id="studio-voice-select" class="voice-dropdown-select" aria-label="Select Voice"></select>
               </div>
             </div>
 
-            <!-- Seek Slider -->
+            <!-- Chapter Seek Slider -->
             <div class="voice-seek-row">
               <span id="studio-time-label" class="voice-time-label">1 / 5</span>
               <input type="range" id="studio-seek-slider" class="voice-seek-slider" min="0" max="4" step="1" value="0" aria-label="Seek chapter">
             </div>
 
-            <!-- Control Buttons -->
+            <!-- Playback Control Buttons -->
             <div class="voice-controls-row">
               <button id="studio-prev-btn" class="btn-voice-ctrl" title="Previous Chapter">
-                <i class="fas fa-step-backward"></i>
+                <i class="fas fa-backward-step"></i>
               </button>
               
               <button id="studio-play-btn" class="btn-voice-ctrl btn-voice-play">
@@ -306,7 +394,7 @@
               </button>
 
               <button id="studio-next-btn" class="btn-voice-ctrl" title="Next Chapter">
-                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-forward-step"></i>
               </button>
 
               <button id="studio-stop-btn" class="btn-voice-ctrl" title="Stop Audio">
@@ -319,18 +407,20 @@
             </div>
           </div>
 
-          <!-- Right: Live Synchronized Interactive Transcript -->
-          <div class="glass-card transcript-card">
+          <!-- Right: Court Reporter Synchronized Press Transcript -->
+          <div class="transcript-card">
             <div class="transcript-header">
-              <h4><i class="fas fa-file-audio" style="color: var(--cyan-primary); margin-right: 8px;"></i> Synchronized Voice Transcript</h4>
-              <span style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">Click any chapter to listen</span>
+              <h4 style="font-family: var(--font-subhead); font-size: 1rem; font-weight: 800; text-transform: uppercase; color: var(--ink-headline);">
+                <i class="fas fa-file-lines" style="color: var(--press-crimson); margin-right: 8px;"></i> Official Transmission Transcript
+              </h4>
+              <span style="font-size: 0.72rem; color: var(--ink-muted); font-family: var(--font-typewriter);">CLICK ANY DISPATCH TO HEAR</span>
             </div>
 
             <!-- Chapter 1 -->
             <div class="transcript-item active" data-chapter="0">
               <div class="transcript-item-title">
-                <span>1. Bio & Overview</span>
-                <i class="fas fa-volume-up"></i>
+                <span>Dispatch 1: Bio & Mission Overview</span>
+                <i class="fas fa-volume-high"></i>
               </div>
               <p class="transcript-item-body">
                 Welcome to the official portfolio of Jebin Joseph. Jebin is an innovative Full Stack Web Developer and Coding Instructor based in Kanyakumari, Tamil Nadu, India. He builds scalable, secure, and modern web applications with cutting-edge AI integrations and high-performance backends.
@@ -340,7 +430,7 @@
             <!-- Chapter 2 -->
             <div class="transcript-item" data-chapter="1">
               <div class="transcript-item-title">
-                <span>2. Technical Stack</span>
+                <span>Dispatch 2: Technical Toolkit & Stack</span>
                 <i class="fas fa-code"></i>
               </div>
               <p class="transcript-item-body">
@@ -351,8 +441,8 @@
             <!-- Chapter 3 -->
             <div class="transcript-item" data-chapter="2">
               <div class="transcript-item-title">
-                <span>3. Work & Teaching</span>
-                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Dispatch 3: Professional Journey & Instruction</span>
+                <i class="fas fa-chalkboard-user"></i>
               </div>
               <p class="transcript-item-body">
                 Jebin is currently working as a Full Stack Coding Teacher at SR Indian Computers Karungal, mentoring students in Python and web development. Previously at Clovion Tech, he successfully built and deployed over five live production websites and integrated third-party REST APIs and payment gateways.
@@ -362,7 +452,7 @@
             <!-- Chapter 4 -->
             <div class="transcript-item" data-chapter="3">
               <div class="transcript-item-title">
-                <span>4. Key Projects</span>
+                <span>Dispatch 4: Production Deployments</span>
                 <i class="fas fa-laptop-code"></i>
               </div>
               <p class="transcript-item-body">
@@ -373,11 +463,11 @@
             <!-- Chapter 5 -->
             <div class="transcript-item" data-chapter="4">
               <div class="transcript-item-title">
-                <span>5. Contact & Collaboration</span>
+                <span>Dispatch 5: Direct Wire & Inquiries</span>
                 <i class="fas fa-handshake"></i>
               </div>
               <p class="transcript-item-body">
-                To collaborate on projects or hire Jebin, reach out directly on WhatsApp at +91 9487851243 or by email at kmt4543@gmail.com. Thank you for exploring Jebin Joseph's AI portfolio.
+                To collaborate on projects or hire Jebin, reach out directly on WhatsApp at +91 9487851243 or by email at kmt4543@gmail.com. Thank you for reading and listening to The Daily Developer.
               </p>
             </div>
           </div>
@@ -386,105 +476,117 @@
     </section>
 
     <!-- ==========================================
-         ABOUT & DEVELOPER TERMINAL SECTION
+         EDITORIAL PROFILE & DOSSIER (ABOUT SECTION)
          ========================================== -->
     <section id="about" class="section">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">
-            <i class="fas fa-user-astronaut"></i>
-            <span>Profile Overview</span>
+            <i class="fas fa-feather-pointed"></i>
+            <span>Editorial Column & Profile</span>
           </div>
-          <h2 class="section-title">Architecting <span class="highlight">Intelligent Web Solutions</span></h2>
-          <p class="section-subtitle">Blending powerful backend engineering with modern responsive UI and AI automation.</p>
+          <h2 class="section-title">The Architect Behind the <span class="highlight">Digital Machines</span></h2>
+          <p class="section-subtitle">Bridging robust backend engineering with elegant responsive UI and intelligent automation.</p>
+          <div class="section-header-rule"></div>
         </div>
 
         <div class="about-grid">
-          <!-- Interactive Terminal Window -->
-          <div class="terminal-window glass-card" style="padding: 0;">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="terminal-dot dot-red"></span>
-                <span class="terminal-dot dot-yellow"></span>
-                <span class="terminal-dot dot-green"></span>
+          <!-- Confidential Dossier (JSON presented as an official press dossier) -->
+          <div class="dossier-window">
+            <div class="dossier-header">
+              <div>
+                <i class="fas fa-folder-closed" style="color: var(--press-gold); margin-right: 6px;"></i>
+                <span>CONFIDENTIAL_DOSSIER // JEBIN.JSON</span>
               </div>
-              <div class="terminal-title">jebin_profile.json</div>
-              <button class="btn-chip-copy" data-copy="Jebin Joseph - Full Stack Developer (Python, Django, REST APIs, JavaScript)" title="Copy summary">
-                <i class="fas fa-copy"></i>
-              </button>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="dossier-stamp-badge">DECLASSIFIED</span>
+                <button class="btn-chip-copy" data-copy="Jebin Joseph - Full Stack Developer (Python, Django, REST APIs, JavaScript)" title="Copy summary" style="color: #fff;">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
             </div>
-            <div class="terminal-body">
-              <p><span class="code-keyword">const</span> <span class="code-var">developer</span> = {</p>
+            <div class="dossier-body">
+              <p><span class="code-keyword">const</span> <span class="code-var">developerProfile</span> = {</p>
               <p>&nbsp;&nbsp;<span class="code-prop">name</span>: <span class="code-str">"Jebin Joseph"</span>,</p>
-              <p>&nbsp;&nbsp;<span class="code-prop">role</span>: <span class="code-str">"Full Stack Web Developer & Coding Instructor"</span>,</p>
-              <p>&nbsp;&nbsp;<span class="code-prop">location</span>: <span class="code-str">"Kanyakumari, Tamil Nadu, India"</span>,</p>
-              <p>&nbsp;&nbsp;<span class="code-prop">backend</span>: [<span class="code-str">"Python"</span>, <span class="code-str">"Django"</span>, <span class="code-str">"Flask"</span>, <span class="code-str">"REST APIs"</span>],</p>
-              <p>&nbsp;&nbsp;<span class="code-prop">frontend</span>: [<span class="code-str">"HTML5"</span>, <span class="code-str">"CSS3"</span>, <span class="code-str">"JavaScript"</span>, <span class="code-str">"Bootstrap"</span>, <span class="code-str">"Tailwind"</span>],</p>
-              <p>&nbsp;&nbsp;<span class="code-prop">databases</span>: [<span class="code-str">"MySQL"</span>, <span class="code-str">"SQLite"</span>, <span class="code-str">"PostgreSQL"</span>],</p>
-              <p>&nbsp;&nbsp;<span class="code-prop">interests</span>: [<span class="code-str">"AI Automation"</span>, <span class="code-str">"E-Commerce"</span>, <span class="code-str">"Mentorship"</span>],</p>
-              <p>&nbsp;&nbsp;<span class="code-prop">status</span>: <span class="code-str">"Ready for New Challenges"</span></p>
+              <p>&nbsp;&nbsp;<span class="code-prop">designation</span>: <span class="code-str">"Full Stack Web Developer & Coding Instructor"</span>,</p>
+              <p>&nbsp;&nbsp;<span class="code-prop">bureau</span>: <span class="code-str">"Kanyakumari, Tamil Nadu, India"</span>,</p>
+              <p>&nbsp;&nbsp;<span class="code-prop">backendCore</span>: [<span class="code-str">"Python"</span>, <span class="code-str">"Django"</span>, <span class="code-str">"Flask"</span>, <span class="code-str">"REST APIs"</span>],</p>
+              <p>&nbsp;&nbsp;<span class="code-prop">frontendUi</span>: [<span class="code-str">"HTML5"</span>, <span class="code-str">"CSS3"</span>, <span class="code-str">"JavaScript"</span>, <span class="code-str">"Bootstrap"</span>, <span class="code-str">"Tailwind"</span>],</p>
+              <p>&nbsp;&nbsp;<span class="code-prop">storage</span>: [<span class="code-str">"PostgreSQL"</span>, <span class="code-str">"MySQL"</span>, <span class="code-str">"SQLite"</span>],</p>
+              <p>&nbsp;&nbsp;<span class="code-prop">endeavors</span>: [<span class="code-str">"AI Automation"</span>, <span class="code-str">"E-Commerce Systems"</span>, <span class="code-str">"Technical Coaching"</span>],</p>
+              <p>&nbsp;&nbsp;<span class="code-prop">status</span>: <span class="code-str">"Ready for Production Challenges"</span></p>
               <p>};</p>
-              <p class="code-comment">// Let's build scalable digital experiences together!</p>
+              <p class="code-comment">// Verified by Editorial Desk • 2026 Edition</p>
             </div>
           </div>
 
-          <!-- About Details Card -->
-          <div class="glass-card about-details-card">
-            <h3>Hello & Welcome!</h3>
-            <p>
-              I am an innovative and detail-oriented Full Stack Web Developer with hands-on experience building scalable, secure, and responsive web applications using Django, Flask, Python, JavaScript, and modern CSS frameworks.
-            </p>
-            <p>
-              Passionate about using AI-powered tools and clean architecture to solve real-world problems—ranging from e-learning systems, dynamic booking portals, and smart admin dashboards to student task managers.
-            </p>
-
-            <div class="info-chips-grid">
-              <div class="info-chip">
-                <div class="chip-meta">
-                  <span class="chip-label">Full Name</span>
-                  <span class="chip-val">Jebin Joseph</span>
-                </div>
-                <i class="fas fa-id-badge" style="color: var(--cyan-primary);"></i>
+          <!-- Editorial Interview Article -->
+          <div class="editorial-profile-card">
+            <div>
+              <h3 style="font-family: var(--font-headline); font-size: 1.6rem; font-weight: 800; color: var(--ink-headline); margin-bottom: 12px;">
+                An Interview With The Engineer
+              </h3>
+              <p style="margin-bottom: 12px;">
+                "Writing clean, reliable code is very much like publishing a front page—every single component must carry purpose, structural integrity, and impeccable clarity."
+              </p>
+              <div class="editorial-pullquote">
+                “My mission is simple: solve tangible problems with bulletproof Django architecture, scalable APIs, and interfaces that elevate the human experience.”
               </div>
-
-              <div class="info-chip">
-                <div class="chip-meta">
-                  <span class="chip-label">Location</span>
-                  <span class="chip-val">Tamil Nadu, India</span>
-                </div>
-                <i class="fas fa-map-marker-alt" style="color: var(--rose-primary);"></i>
-              </div>
-
-              <div class="info-chip">
-                <div class="chip-meta">
-                  <span class="chip-label">Phone</span>
-                  <span class="chip-val">+91 9487851243</span>
-                </div>
-                <button class="btn-chip-copy" data-copy="+919487851243" title="Copy Phone Number">
-                  <i class="fas fa-copy"></i>
-                </button>
-              </div>
-
-              <div class="info-chip">
-                <div class="chip-meta">
-                  <span class="chip-label">Email</span>
-                  <span class="chip-val">kmt4543@gmail.com</span>
-                </div>
-                <button class="btn-chip-copy" data-copy="kmt4543@gmail.com" title="Copy Email Address">
-                  <i class="fas fa-copy"></i>
-                </button>
-              </div>
+              <p>
+                Whether crafting high-throughput e-commerce engines, custom reservation pipelines, or guiding dozens of students into the world of computer science, Jebin Joseph combines technical rigour with creative design acumen.
+              </p>
             </div>
 
-            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-              <a href="#contact" class="btn-cyber btn-primary-glow">
-                <i class="fas fa-comments"></i>
-                <span>Get In Touch</span>
-              </a>
-              <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-cyber btn-glass">
-                <i class="fas fa-file-download"></i>
-                <span>Full Resume PDF</span>
-              </a>
+            <!-- Quick Information Chips -->
+            <div>
+              <div class="info-chips-grid">
+                <div class="info-chip">
+                  <div class="chip-meta">
+                    <span class="chip-label">Full Name</span>
+                    <span class="chip-val">Jebin Joseph</span>
+                  </div>
+                  <i class="fas fa-id-badge" style="color: var(--press-crimson);"></i>
+                </div>
+
+                <div class="info-chip">
+                  <div class="chip-meta">
+                    <span class="chip-label">Location Bureau</span>
+                    <span class="chip-val">Tamil Nadu, India</span>
+                  </div>
+                  <i class="fas fa-map-pin" style="color: var(--press-navy);"></i>
+                </div>
+
+                <div class="info-chip">
+                  <div class="chip-meta">
+                    <span class="chip-label">Telephone Wire</span>
+                    <span class="chip-val">+91 9487851243</span>
+                  </div>
+                  <button class="btn-chip-copy" data-copy="+919487851243" title="Copy Phone Number">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+
+                <div class="info-chip">
+                  <div class="chip-meta">
+                    <span class="chip-label">Telegraphic Email</span>
+                    <span class="chip-val">kmt4543@gmail.com</span>
+                  </div>
+                  <button class="btn-chip-copy" data-copy="kmt4543@gmail.com" title="Copy Email Address">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="#contact" class="btn-press btn-press-primary">
+                  <i class="fas fa-envelope"></i>
+                  <span>Dispatch Direct Inquiry</span>
+                </a>
+                <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-press btn-press-outline">
+                  <i class="fas fa-file-pdf"></i>
+                  <span>Official Dossier PDF</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -492,94 +594,79 @@
     </section>
 
     <!-- ==========================================
-         TECH STACK & SKILLS MATRIX
+         CLASSIFIED ADVERTISEMENTS & DIRECTORY (SKILLS MATRIX)
          ========================================== -->
     <section id="skills" class="section">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">
-            <i class="fas fa-layer-group"></i>
-            <span>Capabilities</span>
+            <i class="fas fa-newspaper"></i>
+            <span>Commercial Directory & Classifieds</span>
           </div>
-          <h2 class="section-title">Technical <span class="highlight">Skills & Stack</span></h2>
-          <p class="section-subtitle">A comprehensive toolkit spanning backend systems, frontend aesthetics, databases, and AI tooling.</p>
+          <h2 class="section-title">Technical <span class="highlight">Skills & Capabilities</span></h2>
+          <p class="section-subtitle">Classified breakdown of engineering languages, frameworks, database systems, and integration tools.</p>
+          <div class="section-header-rule"></div>
         </div>
 
         <div class="skills-grid">
-          <!-- Backend & Architecture -->
-          <div class="glass-card skill-category-card">
-            <div class="skill-cat-header">
-              <div class="cat-icon-box">
-                <i class="fas fa-server"></i>
-              </div>
-              <h3 class="cat-title">Backend & APIs</h3>
-            </div>
+          <!-- Backend Classified Box -->
+          <div class="classified-ad-box">
+            <div class="classified-banner">Section I: Backend & APIs</div>
+            <span class="classified-stamp">★ Production Certified ★</span>
             <div class="skill-pill-list">
               <span class="skill-pill"><i class="devicon-python-plain"></i> Python</span>
-              <span class="skill-pill"><i class="devicon-django-plain"></i> Django</span>
+              <span class="skill-pill"><i class="devicon-django-plain"></i> Django Framework</span>
               <span class="skill-pill"><i class="devicon-flask-original"></i> Flask</span>
-              <span class="skill-pill"><i class="fas fa-network-wired"></i> REST API</span>
+              <span class="skill-pill"><i class="fas fa-network-wired"></i> REST API Design</span>
               <span class="skill-pill"><i class="devicon-mysql-plain"></i> MySQL</span>
               <span class="skill-pill"><i class="devicon-sqlite-plain"></i> SQLite</span>
               <span class="skill-pill"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
-              <span class="skill-pill"><i class="fas fa-lock"></i> Auth & Security</span>
+              <span class="skill-pill"><i class="fas fa-shield-halved"></i> JWT & Auth Security</span>
             </div>
           </div>
 
-          <!-- Frontend & UI/UX -->
-          <div class="glass-card skill-category-card">
-            <div class="skill-cat-header">
-              <div class="cat-icon-box">
-                <i class="fas fa-palette"></i>
-              </div>
-              <h3 class="cat-title">Frontend & UI</h3>
-            </div>
+          <!-- Frontend Classified Box -->
+          <div class="classified-ad-box">
+            <div class="classified-banner">Section II: Frontend & UI</div>
+            <span class="classified-stamp">★ Responsive Certified ★</span>
             <div class="skill-pill-list">
-              <span class="skill-pill"><i class="devicon-html5-plain"></i> HTML5</span>
-              <span class="skill-pill"><i class="devicon-css3-plain"></i> CSS3</span>
+              <span class="skill-pill"><i class="devicon-html5-plain"></i> HTML5 Semantic</span>
+              <span class="skill-pill"><i class="devicon-css3-plain"></i> CSS3 & Animations</span>
               <span class="skill-pill"><i class="devicon-javascript-plain"></i> JavaScript (ES6+)</span>
               <span class="skill-pill"><i class="devicon-tailwindcss-plain"></i> Tailwind CSS</span>
               <span class="skill-pill"><i class="devicon-bootstrap-plain"></i> Bootstrap 5</span>
               <span class="skill-pill"><i class="devicon-react-original"></i> React Basics</span>
               <span class="skill-pill"><i class="devicon-jquery-plain"></i> jQuery</span>
-              <span class="skill-pill"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+              <span class="skill-pill"><i class="fas fa-mobile-screen"></i> Fluid Broadsheet UI</span>
             </div>
           </div>
 
-          <!-- Core Languages -->
-          <div class="glass-card skill-category-card">
-            <div class="skill-cat-header">
-              <div class="cat-icon-box">
-                <i class="fas fa-laptop-code"></i>
-              </div>
-              <h3 class="cat-title">Programming</h3>
-            </div>
+          <!-- Programming Fundamentals -->
+          <div class="classified-ad-box">
+            <div class="classified-banner">Section III: Core Programming</div>
+            <span class="classified-stamp">★ Algorithmic Base ★</span>
             <div class="skill-pill-list">
-              <span class="skill-pill"><i class="devicon-python-plain"></i> Python 3</span>
-              <span class="skill-pill"><i class="devicon-c-plain"></i> C Language</span>
-              <span class="skill-pill"><i class="devicon-cplusplus-plain"></i> C++</span>
-              <span class="skill-pill"><i class="devicon-java-plain"></i> Java</span>
+              <span class="skill-pill"><i class="devicon-python-plain"></i> Python 3 Core</span>
+              <span class="skill-pill"><i class="devicon-c-plain"></i> C Programming</span>
+              <span class="skill-pill"><i class="devicon-cplusplus-plain"></i> C++ Language</span>
+              <span class="skill-pill"><i class="devicon-java-plain"></i> Java Basics</span>
               <span class="skill-pill"><i class="fas fa-cubes"></i> Data Structures</span>
-              <span class="skill-pill"><i class="fas fa-brain"></i> Algorithmic Thinking</span>
+              <span class="skill-pill"><i class="fas fa-brain"></i> Algorithmic Logic</span>
             </div>
           </div>
 
-          <!-- Tools, Integrations & AI -->
-          <div class="glass-card skill-category-card">
-            <div class="skill-cat-header">
-              <div class="cat-icon-box">
-                <i class="fas fa-microchip"></i>
-              </div>
-              <h3 class="cat-title">Tools & AI</h3>
-            </div>
+          <!-- Tools & AI Classified Box -->
+          <div class="classified-ad-box">
+            <div class="classified-banner">Section IV: Tools & AI Integrations</div>
+            <span class="classified-stamp">★ Modern Deployment ★</span>
             <div class="skill-pill-list">
               <span class="skill-pill"><i class="devicon-git-plain"></i> Git Versioning</span>
-              <span class="skill-pill"><i class="devicon-github-original"></i> GitHub</span>
+              <span class="skill-pill"><i class="devicon-github-original"></i> GitHub Repos</span>
               <span class="skill-pill"><i class="fab fa-paypal"></i> PayPal Gateway</span>
-              <span class="skill-pill"><i class="fas fa-robot"></i> AI Web Tools</span>
-              <span class="skill-pill"><i class="devicon-vscode-plain"></i> VS Code</span>
-              <span class="skill-pill"><i class="fas fa-map-marked-alt"></i> Google Maps API</span>
-              <span class="skill-pill"><i class="fas fa-chalkboard-teacher"></i> Tech Mentorship</span>
+              <span class="skill-pill"><i class="fas fa-robot"></i> AI Web Tooling</span>
+              <span class="skill-pill"><i class="devicon-vscode-plain"></i> VS Code Studio</span>
+              <span class="skill-pill"><i class="fas fa-map-location-dot"></i> Google Maps API</span>
+              <span class="skill-pill"><i class="fas fa-chalkboard-user"></i> Tech Instruction</span>
             </div>
           </div>
         </div>
@@ -587,64 +674,66 @@
     </section>
 
     <!-- ==========================================
-         EXPERIENCE & EDUCATION TIMELINE
+         FIELD DISPATCHES & HISTORICAL GAZETTE (EXPERIENCE & EDUCATION)
          ========================================== -->
     <section id="experience" class="section">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">
-            <i class="fas fa-road"></i>
-            <span>Career Journey</span>
+            <i class="fas fa-scroll"></i>
+            <span>Historical Chronicles & Dispatches</span>
           </div>
-          <h2 class="section-title">Experience & <span class="highlight">Education</span></h2>
-          <p class="section-subtitle">My professional evolution as a developer, educator, and lifelong learner.</p>
+          <h2 class="section-title">Career Experience & <span class="highlight">Academic Archives</span></h2>
+          <p class="section-subtitle">A chronological record of professional assignments, client deployments, and educational achievements.</p>
+          <div class="section-header-rule"></div>
         </div>
 
+        <!-- Chronicle Edition Switcher -->
         <div class="timeline-toggle-wrapper">
           <button class="timeline-tab-btn active" data-target="experience">
             <i class="fas fa-briefcase"></i>
-            <span>Work Experience</span>
+            <span>Work Chronicle</span>
           </button>
           <button class="timeline-tab-btn" data-target="education">
             <i class="fas fa-graduation-cap"></i>
-            <span>Education & Internships</span>
+            <span>Academic Archives</span>
           </button>
         </div>
 
-        <!-- Experience Timeline -->
+        <!-- Experience Chronicle -->
         <div id="timeline-experience" class="timeline-container">
-          <!-- Item 1 -->
+          <!-- Dispatch 1 -->
           <div class="timeline-item">
             <div class="timeline-node"></div>
-            <div class="glass-card timeline-card">
+            <div class="timeline-card">
               <div class="timeline-card-header">
                 <div>
                   <h3 class="timeline-role-title">Full Stack Coding Teacher</h3>
                   <div class="timeline-company">
-                    <i class="fas fa-building"></i> SR Indian Computers Karungal
+                    <i class="fas fa-building-columns"></i> SR Indian Computers Karungal
                   </div>
                 </div>
                 <span class="timeline-period-badge">2026 - Present</span>
               </div>
               <p class="timeline-body-text">
-                Teaching Python programming, full stack web development concepts, and guiding students through algorithms, problem-solving, and practical real-world application builds.
+                Leading comprehensive technical coaching across Python programming, object-oriented concepts, and full-stack web applications. Mentoring students through practical project implementation, algorithmic logic, and real-world deployment workflows.
               </p>
               <div class="timeline-tags">
-                <span class="timeline-tag">Python</span>
-                <span class="timeline-tag">Web Dev</span>
+                <span class="timeline-tag">Python Coaching</span>
+                <span class="timeline-tag">Full Stack Web</span>
                 <span class="timeline-tag">Mentorship</span>
-                <span class="timeline-tag">Curriculum</span>
+                <span class="timeline-tag">Curriculum Design</span>
               </div>
             </div>
           </div>
 
-          <!-- Item 2 -->
+          <!-- Dispatch 2 -->
           <div class="timeline-item">
             <div class="timeline-node"></div>
-            <div class="glass-card timeline-card">
+            <div class="timeline-card">
               <div class="timeline-card-header">
                 <div>
-                  <h3 class="timeline-role-title">Web Developer</h3>
+                  <h3 class="timeline-role-title">Full Stack Web Developer</h3>
                   <div class="timeline-company">
                     <i class="fas fa-building"></i> Clovion Tech
                   </div>
@@ -652,21 +741,21 @@
                 <span class="timeline-period-badge">2025</span>
               </div>
               <p class="timeline-body-text">
-                Successfully developed and deployed 5+ live web projects for clients. Built custom e-commerce platforms with secure payments, educational management systems, and high-performance business websites using Django.
+                Successfully engineered and delivered 5+ live production web platforms for diverse clients. Engineered custom e-learning platforms featuring PayPal checkout pipelines, trust administration portals, and responsive business software in Django.
               </p>
               <div class="timeline-tags">
-                <span class="timeline-tag">Django</span>
+                <span class="timeline-tag">Django Systems</span>
                 <span class="timeline-tag">E-Commerce</span>
                 <span class="timeline-tag">Client Deployments</span>
-                <span class="timeline-tag">Bootstrap</span>
+                <span class="timeline-tag">Bootstrap 5</span>
               </div>
             </div>
           </div>
 
-          <!-- Item 3 -->
+          <!-- Dispatch 3 -->
           <div class="timeline-item">
             <div class="timeline-node"></div>
-            <div class="glass-card timeline-card">
+            <div class="timeline-card">
               <div class="timeline-card-header">
                 <div>
                   <h3 class="timeline-role-title">API & Backend Developer</h3>
@@ -677,20 +766,20 @@
                 <span class="timeline-period-badge">2025</span>
               </div>
               <p class="timeline-body-text">
-                Designed and implemented RESTful APIs in Django for user authentication, data synchronization, and third-party integrations (PayPal payments, Google Maps, notifications).
+                Architected RESTful endpoints in Django for user authentication, database CRUD operations, third-party payment dispatches, and notification channels.
               </p>
               <div class="timeline-tags">
-                <span class="timeline-tag">REST APIs</span>
-                <span class="timeline-tag">PayPal API</span>
-                <span class="timeline-tag">Auth Systems</span>
+                <span class="timeline-tag">RESTful APIs</span>
+                <span class="timeline-tag">Payment Gateways</span>
+                <span class="timeline-tag">PostgreSQL / SQLite</span>
               </div>
             </div>
           </div>
 
-          <!-- Item 4 -->
+          <!-- Dispatch 4 -->
           <div class="timeline-item">
             <div class="timeline-node"></div>
-            <div class="glass-card timeline-card">
+            <div class="timeline-card">
               <div class="timeline-card-header">
                 <div>
                   <h3 class="timeline-role-title">Junior Developer</h3>
@@ -701,50 +790,50 @@
                 <span class="timeline-period-badge">2024</span>
               </div>
               <p class="timeline-body-text">
-                Developed dynamic UI components and backend logic using Django, HTML, CSS, JavaScript, and Bootstrap. Assisted in testing and deployment pipelines.
+                Assisted in designing responsive UI layouts and connecting backend Django models to frontend views. Conducted code reviews and participated in user testing and deployment cycles.
               </p>
               <div class="timeline-tags">
                 <span class="timeline-tag">Django</span>
-                <span class="timeline-tag">HTML5/CSS3</span>
+                <span class="timeline-tag">HTML5 / CSS3</span>
                 <span class="timeline-tag">JavaScript</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Education Timeline -->
+        <!-- Education Chronicle -->
         <div id="timeline-education" class="timeline-container" style="display: none;">
-          <!-- Item 1 -->
+          <!-- Academic 1 -->
           <div class="timeline-item">
             <div class="timeline-node"></div>
-            <div class="glass-card timeline-card">
+            <div class="timeline-card">
               <div class="timeline-card-header">
                 <div>
-                  <h3 class="timeline-role-title">Django Fullstack Internship</h3>
+                  <h3 class="timeline-role-title">Django Full Stack Internship</h3>
                   <div class="timeline-company">
-                    <i class="fas fa-laptop-code"></i> Clovion Tech, Kanyakumari
+                    <i class="fas fa-code"></i> Clovion Tech, Kanyakumari
                   </div>
                 </div>
                 <span class="timeline-period-badge">2024</span>
               </div>
               <p class="timeline-body-text">
-                Intensive hands-on training in full-stack web engineering, Django architecture, REST API design, database modeling, and developed a complete E-Commerce application.
+                Rigorous full-time immersion into full-stack Django architecture, REST API fundamentals, relational database schema design, and production web application delivery.
               </p>
               <div class="timeline-tags">
-                <span class="timeline-tag">Django Internship</span>
-                <span class="timeline-tag">Full Stack</span>
+                <span class="timeline-tag">Full Stack Internship</span>
+                <span class="timeline-tag">Django Architecture</span>
                 <span class="timeline-tag">Database Modeling</span>
               </div>
             </div>
           </div>
 
-          <!-- Item 2 -->
+          <!-- Academic 2 -->
           <div class="timeline-item">
             <div class="timeline-node"></div>
-            <div class="glass-card timeline-card">
+            <div class="timeline-card">
               <div class="timeline-card-header">
                 <div>
-                  <h3 class="timeline-role-title">Diploma Course</h3>
+                  <h3 class="timeline-role-title">Diploma in Engineering</h3>
                   <div class="timeline-company">
                     <i class="fas fa-university"></i> Moderator Gnanadason Polytechnic College
                   </div>
@@ -752,7 +841,7 @@
                 <span class="timeline-period-badge">2018 - 2020</span>
               </div>
               <p class="timeline-body-text">
-                Studied advanced engineering fundamentals, CNC programming, automation, CAD design, and scientific fabrication practices with hands-on lab projects.
+                Comprehensive training in engineering fundamentals, automation, CNC programming, and computer-aided design with hands-on workshop fabrications.
               </p>
               <div class="timeline-tags">
                 <span class="timeline-tag">Engineering</span>
@@ -762,10 +851,10 @@
             </div>
           </div>
 
-          <!-- Item 3 -->
+          <!-- Academic 3 -->
           <div class="timeline-item">
             <div class="timeline-node"></div>
-            <div class="glass-card timeline-card">
+            <div class="timeline-card">
               <div class="timeline-card-header">
                 <div>
                   <h3 class="timeline-role-title">Higher Secondary Education (HSS)</h3>
@@ -776,7 +865,7 @@
                 <span class="timeline-period-badge">2017 - 2018</span>
               </div>
               <p class="timeline-body-text">
-                Solid academic foundation in mathematics, analytical problem solving, logical reasoning, and science principles.
+                Foundational studies with strong emphasis on mathematics, physics, logic formulation, and analytical problem-solving.
               </p>
               <div class="timeline-tags">
                 <span class="timeline-tag">Mathematics</span>
@@ -789,36 +878,35 @@
     </section>
 
     <!-- ==========================================
-         FEATURED PROJECTS SHOWCASE
+         SPECIAL PROJECT SUPPLEMENTS (FEATURED WORKS)
          ========================================== -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">
-            <i class="fas fa-cubes"></i>
-            <span>Portfolio</span>
+            <i class="fas fa-photo-film"></i>
+            <span>Special Broadsheet Supplement</span>
           </div>
-          <h2 class="section-title">Featured <span class="highlight">Works & Deployments</span></h2>
-          <p class="section-subtitle">Real-world applications delivered for live businesses, organizations, and clients.</p>
+          <h2 class="section-title">Gazetted Works & <span class="highlight">Featured Deployments</span></h2>
+          <p class="section-subtitle">Real-world web platforms engineered and successfully launched for businesses, institutions, and community organizations.</p>
+          <div class="section-header-rule"></div>
         </div>
 
         <!-- Filter Bar -->
         <div class="projects-filter-bar">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn active" data-filter="all">All Supplements</button>
           <button class="filter-btn" data-filter="django">Django Full-Stack</button>
-          <button class="filter-btn" data-filter="client">Client Websites</button>
-          <button class="filter-btn" data-filter="frontend">Frontend & Static</button>
+          <button class="filter-btn" data-filter="client">Client Commissions</button>
+          <button class="filter-btn" data-filter="frontend">Frontend Editions</button>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-grid">
-          <!-- Project 1: Online Course -->
-          <div class="glass-card project-card" data-category="django">
+          <!-- Project 1 -->
+          <div class="project-card" data-category="django">
             <div class="project-img-wrapper">
               <img src="images/aa10.jpg" alt="Online Course E-Commerce Platform">
-              <div class="project-overlay">
-                <span class="project-category-badge">Django / E-Commerce</span>
-              </div>
+              <span class="project-category-badge">Django / E-Commerce</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">Online Course Platform</h3>
@@ -826,25 +914,21 @@
                 Full-featured video e-learning marketplace with PayPal checkout, instructor dashboards, student enrollment, and lesson tracking.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="http://clovion.org/elearningweb/" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
+                <a href="http://clovion.org/elearningweb/" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                 <button class="btn-inspect" data-project="elearning">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 2: Siva Prakasha Saba -->
-          <div class="glass-card project-card" data-category="client">
+          <!-- Project 2 -->
+          <div class="project-card" data-category="client">
             <div class="project-img-wrapper">
               <img src="images/aa11.jpg" alt="Siva Prakasha Saba Trust Website">
-              <div class="project-overlay">
-                <span class="project-category-badge">Trust & Dynamic</span>
-              </div>
+              <span class="project-category-badge">Trust & Dynamic</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">Siva Prakasha Saba Trust</h3>
@@ -852,25 +936,21 @@
                 Official responsive portal with event listings, history archive, media photo gallery, and trust contact infrastructure.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://saivaprakashasabha.in/" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
+                <a href="https://saivaprakashasabha.in/" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                 <button class="btn-inspect" data-project="siva-sabha">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 3: Wedding Events -->
-          <div class="glass-card project-card" data-category="client">
+          <!-- Project 3 -->
+          <div class="project-card" data-category="client">
             <div class="project-img-wrapper">
               <img src="images/aa12.jpg" alt="Wedding Ceremony Website">
-              <div class="project-overlay">
-                <span class="project-category-badge">Client / Events</span>
-              </div>
+              <span class="project-category-badge">Client / Events</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">Wedding Ceremony Portal</h3>
@@ -878,25 +958,21 @@
                 Custom wedding event static platform with schedule timeline, RSVP dispatch, directions, and romantic photo gallery.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://jebindevp.github.io/wedding/" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
+                <a href="https://jebindevp.github.io/wedding/" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                 <button class="btn-inspect" data-project="wedding">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 4: SR Indian Computers -->
-          <div class="glass-card project-card" data-category="client">
+          <!-- Project 4 -->
+          <div class="project-card" data-category="client">
             <div class="project-img-wrapper">
               <img src="images/aa19.jpg" alt="SR Indian Computers Portal">
-              <div class="project-overlay">
-                <span class="project-category-badge">Institutional / Education</span>
-              </div>
+              <span class="project-category-badge">Institutional / Coaching</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">SR Indian Computers Portal</h3>
@@ -904,51 +980,43 @@
                 Institutional website showcasing coaching programs, course syllabus, admission inquiries, and class timings.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://jebindevp.github.io/computerclass/" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
+                <a href="https://jebindevp.github.io/computerclass/" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                 <button class="btn-inspect" data-project="sr-computers">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 5: Gym Portal -->
-          <div class="glass-card project-card" data-category="client">
+          <!-- Project 5 -->
+          <div class="project-card" data-category="client">
             <div class="project-img-wrapper">
               <img src="images/glow.png" alt="UbaaldGym Portal">
-              <div class="project-overlay">
-                <span class="project-category-badge">Fitness & WhatsApp</span>
-              </div>
+              <span class="project-category-badge">Fitness & WhatsApp</span>
             </div>
             <div class="project-card-body">
-              <h3 class="project-card-title">UbaaldGym Fitness Portal</h3>
+              <h3 class="project-card-title">UbaaldGym Fitness Hub</h3>
               <p class="project-card-desc">
                 Modern gym showcase with workout programs, trainer profiles, membership plans, and instant WhatsApp booking.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://jebindevp.github.io/UbaaldGym/" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
+                <a href="https://jebindevp.github.io/UbaaldGym/" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                 <button class="btn-inspect" data-project="gym">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 6: Electrical Solutions -->
-          <div class="glass-card project-card" data-category="client">
+          <!-- Project 6 -->
+          <div class="project-card" data-category="client">
             <div class="project-img-wrapper">
               <img src="images/aa17.jpg" alt="RJA Electrical Solutions">
-              <div class="project-overlay">
-                <span class="project-category-badge">Business & Services</span>
-              </div>
+              <span class="project-category-badge">Industrial & Services</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">RJA Electrical Solutions</h3>
@@ -956,51 +1024,43 @@
                 Commercial enterprise website for electrical engineering services, industrial project galleries, and quick quote requests.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://jebindevp.github.io/RJA.in/" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
+                <a href="https://jebindevp.github.io/RJA.in/" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                 <button class="btn-inspect" data-project="rja-electrical">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 7: Bible Stories -->
-          <div class="glass-card project-card" data-category="frontend">
+          <!-- Project 7 -->
+          <div class="project-card" data-category="frontend">
             <div class="project-img-wrapper">
               <img src="images/bb2.jpg" alt="Bible Story Portal">
-              <div class="project-overlay">
-                <span class="project-category-badge">Educational UI</span>
-              </div>
+              <span class="project-category-badge">Educational UI</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">Bible Story Educational Hub</h3>
               <p class="project-card-desc">
-                Responsive media portal designed for community reading, featuring chapter categorization and smooth reading modes.
+                Interactive storytelling and media portal designed for youth and community reading, featuring chapter categorization and smooth reading modes.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://jebindevp.github.io/Bible-Story.in/" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
+                <a href="https://jebindevp.github.io/Bible-Story.in/" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                 <button class="btn-inspect" data-project="bible-stories">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 8: Attendance & Task Management -->
-          <div class="glass-card project-card" data-category="django">
+          <!-- Project 8 -->
+          <div class="project-card" data-category="django">
             <div class="project-img-wrapper">
               <img src="images/aa18.jpg" alt="Student Attendance & Task Management">
-              <div class="project-overlay">
-                <span class="project-category-badge">Django Management</span>
-              </div>
+              <span class="project-category-badge">Django Management</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">Student Attendance & Tasks</h3>
@@ -1008,25 +1068,21 @@
                 Role-based academic web app allowing teachers to log attendance, assign homework tasks, and monitor student completion stats.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fab fa-github"></i> Repository
-                  </a>
-                </div>
+                <a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fab fa-github"></i> Repository
+                </a>
                 <button class="btn-inspect" data-project="task-attendance">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Project 9: Smart To-Do -->
-          <div class="glass-card project-card" data-category="django">
+          <!-- Project 9 -->
+          <div class="project-card" data-category="django">
             <div class="project-img-wrapper">
               <img src="images/aa13.jpg" alt="Smart To-Do List Application">
-              <div class="project-overlay">
-                <span class="project-category-badge">Productivity App</span>
-              </div>
+              <span class="project-category-badge">Productivity App</span>
             </div>
             <div class="project-card-body">
               <h3 class="project-card-title">Smart To-Do & Task Organiser</h3>
@@ -1034,13 +1090,11 @@
                 Interactive web organizer built with Python, Django, SQLite, and JavaScript with task categorization, deadline alerts, and quick filters.
               </p>
               <div class="project-card-footer">
-                <div class="project-links">
-                  <a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="project-action-link">
-                    <i class="fab fa-github"></i> Repository
-                  </a>
-                </div>
+                <a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="project-action-link">
+                  <i class="fab fa-github"></i> Repository
+                </a>
                 <button class="btn-inspect" data-project="todo-app">
-                  <i class="fas fa-info-circle"></i> Inspect
+                  <i class="fas fa-magnifying-glass"></i> Inspect
                 </button>
               </div>
             </div>
@@ -1050,35 +1104,36 @@
     </section>
 
     <!-- ==========================================
-         SERVICES & SOLUTIONS
+         COMMERCE & PROFESSIONAL SERVICES DESK (SERVICES)
          ========================================== -->
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">
-            <i class="fas fa-bolt"></i>
-            <span>Services</span>
+            <i class="fas fa-briefcase"></i>
+            <span>Commercial Offerings</span>
           </div>
-          <h2 class="section-title">What I <span class="highlight">Deliver</span></h2>
-          <p class="section-subtitle">Custom technology solutions built to scale businesses, educate students, and solve real-world problems.</p>
+          <h2 class="section-title">What I Deliver For <span class="highlight">Clients & Students</span></h2>
+          <p class="section-subtitle">Specialized technical solutions crafted to scale businesses, educate engineers, and solve complex problems.</p>
+          <div class="section-header-rule"></div>
         </div>
 
         <div class="services-grid">
           <!-- Service 1 -->
-          <div class="glass-card service-card">
+          <div class="service-card">
             <div class="service-icon-box">
               <i class="fas fa-globe"></i>
             </div>
-            <h3 class="service-title">Full Stack Web Apps</h3>
+            <h3 class="service-title">Full Stack Web Engineering</h3>
             <p class="service-desc">
-              End-to-end web applications built using Python, Django, PostgreSQL/MySQL, and modern frontend technologies. Secure, blazing-fast, and responsive.
+              End-to-end web applications built using Python, Django, PostgreSQL/MySQL, and modern frontend technologies. Secure, robust, and responsive.
             </p>
           </div>
 
           <!-- Service 2 -->
-          <div class="glass-card service-card">
+          <div class="service-card">
             <div class="service-icon-box">
-              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-cart-shopping"></i>
             </div>
             <h3 class="service-title">E-Commerce Platforms</h3>
             <p class="service-desc">
@@ -1087,9 +1142,9 @@
           </div>
 
           <!-- Service 3 -->
-          <div class="glass-card service-card">
+          <div class="service-card">
             <div class="service-icon-box">
-              <i class="fas fa-plug"></i>
+              <i class="fas fa-plug-circle-bolt"></i>
             </div>
             <h3 class="service-title">REST API & Integrations</h3>
             <p class="service-desc">
@@ -1098,35 +1153,35 @@
           </div>
 
           <!-- Service 4 -->
-          <div class="glass-card service-card">
+          <div class="service-card">
             <div class="service-icon-box">
               <i class="fas fa-graduation-cap"></i>
             </div>
-            <h3 class="service-title">College Projects & Mentoring</h3>
+            <h3 class="service-title">College Projects & Mentorship</h3>
             <p class="service-desc">
               End-to-end guidance for computer science students. Mini and major project development, source code walkthroughs, and documentation books.
             </p>
           </div>
 
           <!-- Service 5 -->
-          <div class="glass-card service-card">
+          <div class="service-card">
             <div class="service-icon-box">
-              <i class="fas fa-chalkboard-teacher"></i>
+              <i class="fas fa-chalkboard-user"></i>
             </div>
-            <h3 class="service-title">Coding Coaching</h3>
+            <h3 class="service-title">Python & Web Coaching</h3>
             <p class="service-desc">
               Personalized tutoring in Python programming, web development fundamentals, data structures, and practical software engineering.
             </p>
           </div>
 
           <!-- Service 6 -->
-          <div class="glass-card service-card">
+          <div class="service-card">
             <div class="service-icon-box">
-              <i class="fas fa-magic"></i>
+              <i class="fas fa-wand-magic-sparkles"></i>
             </div>
-            <h3 class="service-title">AI Web & Automation</h3>
+            <h3 class="service-title">AI Tooling & Automation</h3>
             <p class="service-desc">
-              Integration of modern AI tools, automated PDF/marksheet generation, smart chatbots, and intelligent analytics dashboards.
+              Integration of modern AI tools, automated report generation, smart inquiry chatbots, and intelligent analytics dashboards.
             </p>
           </div>
         </div>
@@ -1134,25 +1189,28 @@
     </section>
 
     <!-- ==========================================
-         CONTACT SECTION & WHATSAPP DISPATCHER
+         THE TELEGRAPH OFFICE & CONTACT WIRE (CONTACT FORM)
          ========================================== -->
     <section id="contact" class="section">
       <div class="container">
         <div class="section-header">
           <div class="section-badge">
-            <i class="fas fa-envelope-open-text"></i>
-            <span>Get in Touch</span>
+            <i class="fas fa-paper-plane"></i>
+            <span>The Telegraph Office</span>
           </div>
-          <h2 class="section-title">Let's Build Something <span class="highlight">Extraordinary</span></h2>
-          <p class="section-subtitle">Have a project in mind, need a full-stack developer, or looking for coaching? Send a direct message!</p>
+          <h2 class="section-title">Dispatch A Direct <span class="highlight">Telegram Inquiry</span></h2>
+          <p class="section-subtitle">Have a web project in mind, need a full-stack developer, or looking for coaching? Send an instant transmission!</p>
+          <div class="section-header-rule"></div>
         </div>
 
         <div class="contact-grid">
-          <!-- Direct Contact Info -->
+          <!-- Direct Wire Channels -->
           <div class="contact-info-panel">
-            <h3>Direct Channels</h3>
-            <p>
-              Feel free to connect directly via WhatsApp, email, or telephone. I reply promptly to project inquiries and collaboration opportunities.
+            <h3 style="font-family: var(--font-headline); font-size: 1.4rem; font-weight: 800; color: var(--ink-headline); margin-bottom: 10px;">
+              Direct Communication Lines
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--ink-secondary);">
+              Connect directly via WhatsApp, email, or telephone. All project inquiries and collaboration opportunities receive prompt responses.
             </p>
 
             <div class="contact-direct-list">
@@ -1161,55 +1219,61 @@
                   <i class="fab fa-whatsapp"></i>
                 </div>
                 <div class="direct-text">
-                  <h5>WhatsApp Instant Chat</h5>
+                  <h5>WhatsApp Instant Wire</h5>
                   <p>+91 9487851243</p>
                 </div>
               </a>
 
               <a href="mailto:kmt4543@gmail.com" class="direct-contact-item">
-                <div class="direct-icon" style="color: var(--cyan-primary); background: var(--cyan-subtle);">
+                <div class="direct-icon" style="color: var(--press-crimson); background: var(--press-crimson-subtle);">
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="direct-text">
-                  <h5>Direct Email</h5>
+                  <h5>Editorial Email</h5>
                   <p>kmt4543@gmail.com</p>
                 </div>
               </a>
 
               <a href="tel:+919487851243" class="direct-contact-item">
-                <div class="direct-icon" style="color: var(--violet-primary); background: var(--violet-subtle);">
-                  <i class="fas fa-phone-alt"></i>
+                <div class="direct-icon" style="color: var(--press-navy); background: var(--press-navy-subtle);">
+                  <i class="fas fa-phone"></i>
                 </div>
                 <div class="direct-text">
-                  <h5>Phone Call</h5>
+                  <h5>Direct Telephone</h5>
                   <p>+91 9487851243</p>
                 </div>
               </a>
 
               <div class="direct-contact-item">
-                <div class="direct-icon" style="color: var(--amber-primary); background: rgba(245, 158, 11, 0.12);">
-                  <i class="fas fa-map-marker-alt"></i>
+                <div class="direct-icon" style="color: var(--press-gold); background: var(--press-gold-subtle);">
+                  <i class="fas fa-location-dot"></i>
                 </div>
                 <div class="direct-text">
-                  <h5>Location</h5>
+                  <h5>Bureau Location</h5>
                   <p>Kanyakumari, Tamil Nadu, India</p>
                 </div>
               </div>
             </div>
 
             <div style="margin-top: 20px;">
-              <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-cyber btn-glass" style="width: 100%;">
-                <i class="fas fa-file-download"></i>
-                <span>Download Official Resume PDF</span>
+              <a href="images/Jebin resume.pdf" download="Jebin_Joseph_Resume.pdf" class="btn-press btn-press-ink" style="width: 100%;">
+                <i class="fas fa-file-pdf"></i>
+                <span>Download Official Printed Resume PDF</span>
               </a>
             </div>
           </div>
 
-          <!-- WhatsApp Message Generator Form -->
-          <div class="glass-card contact-form-card">
-            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: #fff; margin-bottom: 18px;">
-              <i class="fab fa-whatsapp" style="color: #25d366; margin-right: 8px;"></i> Instant WhatsApp Dispatcher
-            </h3>
+          <!-- Telegram Form -->
+          <div class="telegram-form-card">
+            <div class="telegram-banner-header">
+              <div>
+                <h4 class="telegram-title">
+                  <i class="fab fa-whatsapp" style="color: #25d366; margin-right: 6px;"></i> Instant WhatsApp Telegram
+                </h4>
+                <span style="font-size: 0.74rem; color: var(--ink-muted); font-family: var(--font-sans);">Form Auto-Encodes Directly to WhatsApp</span>
+              </div>
+              <span class="telegram-stamp">DISPATCH READY</span>
+            </div>
 
             <form id="whatsappForm">
               <div class="form-group-row">
@@ -1229,18 +1293,18 @@
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="subject">Subject / Project Category</label>
-                <input type="text" id="subject" class="form-input" placeholder="e.g. Web Development, Django App, Coaching">
+                <label class="form-label" for="subject">Project Category / Topic</label>
+                <input type="text" id="subject" class="form-input" placeholder="e.g. Django Full Stack Web App, Coaching">
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="message">Your Message *</label>
-                <textarea id="message" class="form-textarea" placeholder="Describe your project, timeline, requirements, or inquiry..." required></textarea>
+                <label class="form-label" for="message">Telegram Message *</label>
+                <textarea id="message" class="form-textarea" placeholder="State your requirements, timeline, project scope, or inquiry..." required></textarea>
               </div>
 
-              <button type="submit" class="btn-cyber btn-primary-glow" style="width: 100%; font-size: 1rem; padding: 14px;">
-                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
-                <span>Send Directly to WhatsApp</span>
+              <button type="submit" class="btn-press btn-press-primary" style="width: 100%; font-size: 0.95rem; padding: 12px;">
+                <i class="fab fa-whatsapp" style="font-size: 1.1rem;"></i>
+                <span>Transmit Directly to WhatsApp</span>
               </button>
             </form>
           </div>
@@ -1249,46 +1313,48 @@
     </section>
 
     <!-- ==========================================
-         FOOTER
+         NEWSPAPER FOOTER & CIRCULATION DESK
          ========================================== -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a href="#hero" class="brand-logo">
-              <span class="brand-badge">&lt;/&gt;</span>
-              <span>JEBIN<span style="color: var(--cyan-primary);">.DEV</span></span>
-            </a>
+            <h2 class="masthead-title" style="font-size: 2.2rem; margin-bottom: 6px;">
+              The Daily Developer
+            </h2>
             <p>
-              Full Stack Web Developer & Coding Instructor crafting modern, scalable, and intelligent web applications with Django and Python.
+              The Official Technical Broadsheet of Jebin Joseph. Published for engineers, recruiters, businesses, and technology enthusiasts worldwide.
+            </p>
+            <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 8px;">
+              Published from Kanyakumari, Tamil Nadu, India.
             </p>
           </div>
 
           <div class="footer-col">
-            <h4>Quick Navigation</h4>
+            <h4>Broadsheet Sections</h4>
             <ul class="footer-links-list">
-              <li><a href="#about" class="footer-link">About Me</a></li>
-              <li><a href="#skills" class="footer-link">Skills & Stack</a></li>
-              <li><a href="#experience" class="footer-link">Career Experience</a></li>
-              <li><a href="#projects" class="footer-link">Featured Projects</a></li>
-              <li><a href="#services" class="footer-link">Services</a></li>
+              <li><a href="#hero" class="footer-link">Front Page</a></li>
+              <li><a href="#about" class="footer-link">Editorial Profile</a></li>
+              <li><a href="#skills" class="footer-link">Classifieds & Skills</a></li>
+              <li><a href="#experience" class="footer-link">Career Chronicle</a></li>
+              <li><a href="#projects" class="footer-link">Special Reports</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h4>Connect & Social</h4>
+            <h4>Wire Dispatches</h4>
             <ul class="footer-links-list">
-              <li><a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-github"></i> GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/jebin-joseph-6ba428376/" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-              <li><a href="https://wa.me/919487851243" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-              <li><a href="mailto:kmt4543@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> Email</a></li>
+              <li><a href="https://github.com/Jebindevp" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-github"></i> GitHub Press</a></li>
+              <li><a href="https://www.linkedin.com/in/jebin-joseph-6ba428376/" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn Wire</a></li>
+              <li><a href="https://wa.me/919487851243" target="_blank" rel="noopener" class="footer-link"><i class="fab fa-whatsapp"></i> WhatsApp Direct</a></li>
+              <li><a href="mailto:kmt4543@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> Telegraph Email</a></li>
             </ul>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 Jebin Joseph. All rights reserved.</p>
-          <p>Engineered with Modern AI, Ultra 3D & Cyber Glassmorphic Design</p>
+          <p>&copy; 2026 The Daily Developer • Jebin Joseph. All rights reserved.</p>
+          <p>Engineered with High-End Broadsheet Newspaper Design Architecture</p>
         </div>
       </div>
     </footer>
@@ -1300,11 +1366,11 @@
   <div id="floating-audio-dock" class="floating-audio-dock">
     <div class="dock-left">
       <div class="dock-icon">
-        <i class="fas fa-microphone-alt"></i>
+        <i class="fas fa-radio"></i>
       </div>
       <div class="dock-info">
-        <span id="dock-title" class="dock-title">1. Bio & Overview</span>
-        <span id="dock-sub" class="dock-sub">Voice Tour Ready</span>
+        <span id="dock-title" class="dock-title">Dispatch 1: Bio & Mission</span>
+        <span id="dock-sub" class="dock-sub">BROADCAST READY</span>
       </div>
     </div>
 
@@ -1318,17 +1384,17 @@
     </div>
 
     <div class="dock-controls">
-      <button id="dock-play-btn" class="btn-voice-ctrl btn-voice-play" style="padding: 6px 14px; font-size: 0.8rem;" title="Play/Pause Tour">
+      <button id="dock-play-btn" class="btn-voice-ctrl btn-voice-play" style="padding: 6px 12px; font-size: 0.8rem;" title="Play/Pause Tour">
         <i class="fas fa-play"></i>
       </button>
       <a href="#voice-studio" class="btn-voice-ctrl" style="padding: 6px 10px; font-size: 0.78rem;" title="Open Studio Section">
-        <i class="fas fa-external-link-alt"></i>
+        <i class="fas fa-arrow-up-right-from-square"></i>
       </a>
     </div>
   </div>
 
   <!-- ==========================================
-       PROJECT DETAIL INSPECTION MODAL
+       PROJECT DETAIL INSPECTION MODAL (SPECIAL GAZETTE SUPPLEMENT)
        ========================================== -->
   <div id="project-modal" class="modal-backdrop">
     <div class="modal-container">
@@ -1344,11 +1410,11 @@
         <p id="modal-desc" class="modal-description">Project details...</p>
 
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a id="modal-live-btn" href="#" target="_blank" rel="noopener" class="btn-cyber btn-primary-glow">
-            <i class="fas fa-external-link-alt"></i>
-            <span>Visit Live Website</span>
+          <a id="modal-live-btn" href="#" target="_blank" rel="noopener" class="btn-press btn-press-primary">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+            <span>Visit Live Platform</span>
           </a>
-          <a id="modal-github-btn" href="#" target="_blank" rel="noopener" class="btn-cyber btn-glass">
+          <a id="modal-github-btn" href="#" target="_blank" rel="noopener" class="btn-press btn-press-ink">
             <i class="fab fa-github"></i>
             <span>View Source on GitHub</span>
           </a>
@@ -1358,48 +1424,47 @@
   </div>
 
   <!-- ==========================================
-       AI CHATBOT ASSISTANT WIDGET
+       NEWSROOM ASSISTANT CHATBOT WIDGET
        ========================================== -->
   <div class="ai-widget-wrapper">
     <div class="ai-chat-window">
       <div class="ai-chat-header">
         <div class="ai-bot-identity">
           <div class="ai-bot-avatar">
-            <i class="fas fa-robot"></i>
+            <i class="fas fa-feather-pointed"></i>
           </div>
           <div class="ai-bot-info">
-            <h4>Jebin's AI Assistant</h4>
-            <p>● Online & Ready</p>
+            <h4>Virtual Newsroom Editor</h4>
+            <p>● Editorial Desk Online</p>
           </div>
         </div>
-        <button class="modal-close-btn ai-chat-close" style="position: static; width: 30px; height: 30px; font-size: 0.85rem;" aria-label="Close AI Chat">
+        <button class="modal-close-btn ai-chat-close" style="position: static; width: 28px; height: 28px; font-size: 0.8rem;" aria-label="Close Assistant">
           <i class="fas fa-times"></i>
         </button>
       </div>
 
       <div class="ai-chat-body">
         <div class="chat-bubble bot">
-          Hi! 👋 I'm Jebin's interactive AI assistant. Click any prompt below to learn more about his work, skills, or get in touch!
+          Good day! 📰 I am the Virtual Newsroom Editor for The Daily Developer. Select any inquiry topic below to learn more about Jebin's technical assignments and credentials:
         </div>
       </div>
 
       <div class="ai-quick-prompts">
         <button class="prompt-btn" data-topic="skills">💻 Tech Stack</button>
         <button class="prompt-btn" data-topic="projects">🚀 Top Projects</button>
-        <button class="prompt-btn" data-topic="experience">💼 Work Experience</button>
-        <button class="prompt-btn" data-topic="contact">📞 Contact Info</button>
-        <button class="prompt-btn" data-topic="resume">📄 Download Resume</button>
+        <button class="prompt-btn" data-topic="experience">💼 Career Journey</button>
+        <button class="prompt-btn" data-topic="contact">📞 Wire Desk</button>
+        <button class="prompt-btn" data-topic="resume">📄 Press Dossier</button>
       </div>
     </div>
 
-    <button class="ai-widget-trigger" aria-label="Open AI Assistant Chatbot" title="Chat with AI Assistant">
-      <span class="pulse-halo"></span>
-      <i class="fas fa-robot"></i>
+    <button class="ai-widget-trigger" aria-label="Open Newsroom Assistant Chatbot" title="Consult Newsroom Assistant">
+      <i class="fas fa-newspaper"></i>
     </button>
   </div>
 
   <!-- Back to Top Button -->
-  <button class="btn-back-to-top" aria-label="Back to Top">
+  <button class="btn-back-to-top" aria-label="Back to Top" title="Back to Top of Page">
     <i class="fas fa-arrow-up"></i>
   </button>
 
